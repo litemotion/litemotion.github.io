@@ -1,0 +1,196 @@
+/**
+ * app.css v1 
+ * Copyright 2016 Simon CHAM.
+ */
+ 
+/* ======================================================================== 
+ * w3.css extension
+ * 
+ * ======================================================================== */
+.w3-animate-right-out{position:relative;-webkit-animation:animaterightout 0.4s;animation:animaterightout 0.4s}
+@-webkit-keyframes animaterightout{from{right:0;opacity:1} to {right:-300px;opacity:0}}
+
+.w3-animate-left-out{position:relative;-webkit-animation:animateleftout 0.4s;animation:animateleftout 0.4s}
+@-webkit-keyframes animateleftout{from{left:0;opacity:1} to {left:-300px;opacity:0}}
+
+/*
+* add .w3-readonly as the same as the input:readonly
+*/
+input.w3-readonly, textarea.w3-readonly {background:transparent!important; border-bottom:0px!important}
+/*
+* add .w3-hide-s which hides the element when screen is small
+* add .s0, .m0 for the case .w3-col
+*/
+@media (max-width:600px){
+	.w3-hide-s {display:none;}
+	.s0 {display:none;}
+}
+@media (max-width:992px) and (min-width:601px) {
+	.m0 {display:none;}
+}
+/*
+* add .w3-show-s,.w-show-inline-block-s which shows the element when screen is small
+*/
+.w3-show-s,.w3-show-inline-block-s {display:none;}
+@media (max-width:600px){
+	.w3-show-s {display:block;}
+	.w3-show-inline-block-s {display:inline-block;}
+}
+/*
+* standardise the tooltips colors
+*/
+.w3-tooltip .w3-text {
+	position:absolute;margin:5px;padding:5px;background:#666;color:#f1f1f1;font-size:10px!important;border-radius:4px!important}
+/*
+* add .w3-nowrap
+*/
+.w3-nowrap {white-space:nowrap;}
+/*
+* add disabled style for w3-btn-block
+*/
+.w3-btn-block:disabled{cursor:not-allowed;opacity:0.3}
+.w3-btn-block *{pointer-events:none}
+
+
+
+
+/* ======================================================================== 
+ * reset elements
+ * 
+ * ======================================================================== */
+
+/*
+* standardise the default background color
+*/
+body {background:#f3f3f3;font-family:"Microsoft JhengHei","Segoe UI"}
+h2,h4 {font-family:"Microsoft JhengHei","Segoe UI"}
+/*
+* standardise the background color of user input elements
+*/
+input, textarea, select {background:#fafafa;}
+/*
+* standardise the read-only user input elements
+*/
+input:read-only, textarea:read-only {background:transparent!important; border-bottom:0px!important;}
+/*
+* standardise the fa-toggle-on and fa-toggle-off color
+*/
+.fa-toggle-on {color:#009688;cursor:pointer;}
+.fa-toggle-off {color:#757575;cursor:pointer;}
+
+
+
+/* ======================================================================== 
+ * app specific css
+ * 
+ * ======================================================================== */
+
+/*
+* the holder element of avatar
+*/
+div.app-avatar-big {width:160px;height:160px;border-radius:50%;overflow:hidden;}
+.app-avatar-big>img {height:100%;}
+div.app-avatar-medium {width:80px;height:80px;border-radius:50%;overflow:hidden;}
+.app-avatar-medium>img {height:100%;}
+div.app-avatar-small {width:40px;height:40px;border-radius:50%;overflow:hidden;}
+.app-avatar-small>img {height:100%;}
+/* 
+* the holder element of all pagelets
+*/
+.app-main {margin-top:60px;}
+/*
+* the holder element of the messenger
+*/
+.app-messenger {top:0px;right:0px;display:none;width:320px;}
+/*
+* the holder element of the left side navigation menu
+*  .app-nav is the modal background
+*  .app-nav div is the actual holder of the navigation menu 
+*  .app-nav-width is just for the el that cannot be set width in other ways. 
+*  .app-nav-icon-width standardize the holder width of icons in the left side navigation menu
+*/
+.app-nav {}
+.app-nav>div {top:0px;width:240px;}
+.app-nav-width {width:240px;}
+.app-nav-icon-width {display:inline-block;width:50px;}
+/*
+* the holder element of the top title bar
+*/
+.app-top-bar {position:fixed;width:100%;top:0px;z-index:1}
+/* 
+* the functional element for file upload
+*/
+.app-file-hidden {display:none;}
+/* 
+* the holder of toast messages. 
+*/
+.app-toast {display:none;position:absolute;}
+.app-toast>div {top:0px;}
+.app-toast>div>span {line-height:30px;}
+/*
+* the holders of modals
+*/
+.app-modal {}
+.app-modal>.app-modal-close-btn {
+	top:5%;right:5%;position:fixed;color:#fff;font-size:3em;background:#ddd;border-radius:10px;
+	padding:0px 5px;cursor:pointer;
+}
+/**
+* standardise email string style
+*/
+.app-email {color:#2196F3;}
+/**
+* application ui helper popup
+*/
+.app-helper-popup {position:absolute!important;top:0%;left:25px;cursor:pointer;}
+
+
+
+/* ## old style ## */
+
+
+/* define different color for the first select option if it is for placeholder */
+.app-placeholder-option {color:#bbb;}
+option:not(first-child) {color:#000;}
+
+
+
+/* the ui element for user to click to open file browser */
+.app-file   {}
+ /* the ui element to hold and display the file list*/
+.app-file-holder {}
+
+/* define style for supplier status circle */
+
+.app-supplier-circle {
+	border-radius:40px; width:80px; height:80px; line-height:80px; 
+	display:inline-block!important;
+	text-align:center;
+}
+
+.app-supplier-draft {background:#ffffd7;color:#000;}
+.app-supplier-active {background:#009688;color:#fff;}
+
+/* app-a is alternative of standard <a> if there is a case <a> inside <a> */
+.app-a{background-color:transparent}.app-a:active,.app-a:hover{outline:0}
+.app-a:hover,.app-a:focus{background-color:#fafafa}
+
+/* ======================================================================== 
+ * Scrollbar Customization 
+ * Only work for Chrome
+ * ======================================================================== */
+ /*
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb {
+    1-webkit-border-radius: 3px;
+    1border-radius: 3px;
+    background: #dddddd; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background:rgba(0,0,0,0)
+}
+::-webkit-scrollbar:hover {
+    width: 10px;
+}
+*/
