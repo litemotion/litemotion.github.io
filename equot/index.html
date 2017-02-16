@@ -10,10 +10,11 @@
 <link rel="stylesheet" href="../stylesheets/app.css">
 <script src="../javascripts/jquery-1.11.1.min.js"></script>
 <script src='../javascripts/handlebars-v2.0.0.js'></script>
-<script src="../javascripts/app.js"></script>
 <style>
 .failed,.success {display:none;}
-
+.fa.w3-tooltip .w3-text {left:-100%;background:#000;top:100%;}
+.bottom-logo {opacity:0.2}
+.bottom-logo:hover {opacity:1}
 </style>
 </head>
 <body style="1background:url(../images/6749661973_e2c267e9ed_b.jpg);scroll:none;">
@@ -36,9 +37,31 @@
 		</div>
 		<div class="w3-col m3">&nbsp;</div>
 	</div>
+	<br><br>
+	<div class="w3-row w3-center">
+		<p class="w3-text-white">EQUOT 測試平台只支持以下瀏覽器：
+	</div>
+	<div class="w3-row w3-center w3-xxlarge">
+		<div class="w3-col">
+			<i class="fa fa-firefox w3-text-shadow w3-text-orange w3-hover-text-deep-orange w3-tooltip">
+				<span class="w3-text w3-nowrap">FireFox 最新版本</span>
+			</i>
+			<i class="fa fa-chrome w3-text-shadow w3-text-white w3-hover-text-blue w3-tooltip">
+				<span class="w3-text w3-nowrap">Chrome 最新版本</span>
+			</i>
+			<i class="fa fa-opera w3-text-shadow w3-text-sand w3-hover-text-red w3-tooltip">
+				<span class="w3-text w3-nowrap">Opera 最新版本</span>
+			</i>
+			<i class="fa fa-internet-explorer w3-text-shadow w3-text-light-blue w3-hover-text-blue w3-tooltip">
+				<span class="w3-text w3-nowrap">Internet Explorer 11 或以上</span>
+			</i><span class="w3-transparent w3-small w3-text-red">11</span>
+		</div>
+	</div>
 </div>
-<div style="position:fixed;bottom:0px;width:100%;" class="w3-white w3-padding w3-card-2">
-<a href="http://www.litemotion.net"><img src="../images/litemotion-logo.png" style="height:24px;"></a>
+<div style="position:fixed;bottom:0px;width:100%;" class="w3-padding w3-center">
+	<span class="w3-card-2 w3-light-grey w3-padding bottom-logo">
+	<a href="http://www.litemotion.net"><img src="../images/litemotion-logo.png" style="height:24px;"></a>
+	</span>
 </div>
 <div style="position:absolute;top:0px;height:100%;width:100%;z-index:-1;">
 	<img src="../images/6749661973_e2c267e9ed_b.jpg" style="width:100%;height:100%;-webkit-filter: blur(8px);overflow:hidden;z-index:-1;">
