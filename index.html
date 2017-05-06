@@ -275,20 +275,20 @@ body, html {
         -->
       </div>
       <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="" target="_blank">
+      <div class="feedback">
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            <input class="w3-input w3-border name" type="text" placeholder="Name" required name="Name">
           </div>
           <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            <input class="w3-input w3-border email" type="text" placeholder="Email" required name="Email">
           </div>
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <input class="w3-input w3-border message" type="text" placeholder="Message" required name="Message">
         <button class="w3-btn w3-black w3-right w3-padding w3-section send-message-btn">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
-      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -363,6 +363,15 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+$(document).ready(funcion(){
+  $(".send-message-btn").click(function(){
+    var o = {ts_c:new Date()};
+    o.name = $(".feedback .name").val()
+    o.email= $(".feedback .email").val()
+    o.message = $(".feedback .message").val()
+    console.log(o)
+  })
+})
 </script>
 </body>
 </html>
