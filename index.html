@@ -365,11 +365,16 @@ function toggleFunction() {
 }
 $(document).ready(function(){
   $(".send-message-btn").click(function(){
+    var url = "https://script.google.com/macros/s/AKfycbzjS-bG-F4R-hqCfyEpf6d8MYwgxQo7MrLrSNl2rlrMNkKAhp7s/exec"
     var o = {ts_c:new Date()};
     o.name = $(".feedback .name").val()
     o.email= $(".feedback .email").val()
     o.message = $(".feedback .message").val()
     console.log(o)
+    $.post(url,o,function(r){
+      console.log("result:")
+      console.log(r)
+    })
   })
 })
 </script>
