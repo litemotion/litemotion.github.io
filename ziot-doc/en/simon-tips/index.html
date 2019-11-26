@@ -1,0 +1,1661 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en,ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/doc-icon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>Simon's Tip - ZIOT Design</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#simons-tip" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="ZIOT Design" class="md-header-nav__button md-logo">
+          
+            <img src="../img/doc-icon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ZIOT Design
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Simon's Tip
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../basebox/" class="md-tabs__link">
+          Basebox
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../toolz/" class="md-tabs__link">
+          Toolz
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../app-server-checklist/" class="md-tabs__link">
+          App Server
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-overview/" class="md-tabs__link">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../linux-tips/" class="md-tabs__link md-tabs__link--active">
+          Other Resources
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="ZIOT Design" class="md-nav__button md-logo">
+      
+        <img src="../img/doc-icon.png" width="48" height="48">
+      
+    </a>
+    ZIOT Design
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../guide/" title="Guide" class="md-nav__link">
+      Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Basebox
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Basebox
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basebox/" title="What is Basebox" class="md-nav__link">
+      What is Basebox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-machines-supported/" title="Machines Supported" class="md-nav__link">
+      Machines Supported
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Toolz
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Toolz
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz/" title="What is Toolz" class="md-nav__link">
+      What is Toolz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-get-started/" title="Get Started w Toolz" class="md-nav__link">
+      Get Started w Toolz
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      App Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        App Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../app-server-checklist/" title="Checklist" class="md-nav__link">
+      Checklist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-overview/" title="API Overview" class="md-nav__link">
+      API Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Other Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Other Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-tips/" title="Linux Tips" class="md-nav__link">
+      Linux Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Simon's Tip
+      </label>
+    
+    <a href="./" title="Simon's Tip" class="md-nav__link md-nav__link--active">
+      Simon's Tip
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs-version-updates-cycle" class="md-nav__link">
+    Node.js Version Updates Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-is-nodejs-installed-on-ubuntu" class="md-nav__link">
+    Where is nodejs installed on ubuntu?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-setup" class="md-nav__link">
+    General Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-to-nvm-on-my-wsl" class="md-nav__link">
+    Migration to nvm on my WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-of-better-sqlite3" class="md-nav__link">
+    Installation of better-sqlite3
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs-version-updates-cycle" class="md-nav__link">
+    Node.js Version Updates Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-is-nodejs-installed-on-ubuntu" class="md-nav__link">
+    Where is nodejs installed on ubuntu?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-setup" class="md-nav__link">
+    General Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-to-nvm-on-my-wsl" class="md-nav__link">
+    Migration to nvm on my WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-of-better-sqlite3" class="md-nav__link">
+    Installation of better-sqlite3
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="simons-tip">Simon's Tip</h1>
+<p><code>2019-11-20</code></p>
+<div class="admonition info">
+<p class="admonition-title">This article is for technical audience.</p>
+</div>
+<p>This page is a collection of my personal notes or failure experience about this project :( .</p>
+<div class="admonition failure">
+<p class="admonition-title">TBD</p>
+</div>
+<h2 id="nodejs-version-updates-cycle">Node.js Version Updates Cycle</h2>
+<p>A new release of Node.js is cut from the GitHub master branch every six months around April and October. Whenever a new odd-numbered version comes out, the most recent even version goes to long-term support, or LTS. Versions under LTS receive active support for 18 months followed by an additional 12 months of maintenance support. Meanwhile, active versions get non-breaking backports of any changes implemented in the most current version a few weeks after release. Maintenance releases periodically receive critical fixes and documentation updates.</p>
+<p>(source: https://www.keycdn.com/blog/node-version-manager)</p>
+<h2 id="where-is-nodejs-installed-on-ubuntu">Where is nodejs installed on ubuntu?</h2>
+<div class="highlight"><pre><span></span>which nodejs
+/usr/bin/nodejs
+</pre></div>
+
+<h2 id="general-setup">General Setup</h2>
+<blockquote>
+<p>Ubuntu Linux
+nvm - node version manager.
+node -<br />
+pm2 - 
+npm
+sqlite3</p>
+</blockquote>
+<h2 id="migration-to-nvm-on-my-wsl">Migration to nvm on my WSL</h2>
+<p>Write down the current versions of node environment:</p>
+<div class="highlight"><pre><span></span>simon@DESKTOP-OD3EGR1:~$ npm --versions
+<span class="o">{</span> npm: <span class="s1">&#39;5.6.0&#39;</span>,
+  ares: <span class="s1">&#39;1.10.1-DEV&#39;</span>,
+  cldr: <span class="s1">&#39;32.0&#39;</span>,
+  http_parser: <span class="s1">&#39;2.8.0&#39;</span>,
+  icu: <span class="s1">&#39;60.1&#39;</span>,
+  modules: <span class="s1">&#39;57&#39;</span>,
+  napi: <span class="s1">&#39;3&#39;</span>,
+  nghttp2: <span class="s1">&#39;1.32.0&#39;</span>,
+  node: <span class="s1">&#39;8.11.3&#39;</span>,
+  openssl: <span class="s1">&#39;1.0.2o&#39;</span>,
+  tz: <span class="s1">&#39;2017c&#39;</span>,
+  unicode: <span class="s1">&#39;10.0&#39;</span>,
+  uv: <span class="s1">&#39;1.19.1&#39;</span>,
+  v8: <span class="s1">&#39;6.2.414.54&#39;</span>,
+  zlib: <span class="s1">&#39;1.2.11&#39;</span> <span class="o">}</span>
+</pre></div>
+
+<p>Write down the current global modules status:</p>
+<div class="highlight"><pre><span></span>simon@DESKTOP-OD3EGR1:~$ npm ls -g --depth<span class="o">=</span><span class="m">0</span>
+/usr/lib
+├── @vue/cli@3.0.5
+├── node-gyp@3.7.0
+└── npm@5.6.0
+</pre></div>
+
+<p>Note: I am in China so github may not work properly sometimes.</p>
+<p>Official install method with <code>wget</code>:</p>
+<div class="highlight"><pre><span></span>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="p">|</span> bash
+</pre></div>
+
+<p>When I run the command, I have no luck to get the following output! (I've tried both cases of VPN on and off)</p>
+<div class="highlight"><pre><span></span>simon@DESKTOP-OD3EGR1:~$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="p">|</span> <span class="nv">bash</span>
+<span class="o">=</span>&gt; Downloading nvm from git to <span class="s1">&#39;/home/simon/.nvm&#39;</span>
+<span class="o">=</span>&gt; Cloning into <span class="s1">&#39;/home/simon/.nvm&#39;</span>...
+fatal: unable to access <span class="s1">&#39;https://github.com/creationix/nvm.git/&#39;</span>: Could not resolve host: github.com
+Failed to clone nvm repo. Please report this!
+</pre></div>
+
+<p>So I decide to change the DNS server for <code>402</code> network to <code>8.8.8.8</code>. Windows 10 have effective in next open cmd shell but WSL doesn't and require to reboot Windows. After reboot, WSL can resolve <code>github.com</code>!</p>
+<p>OK. Retry the command to install nvm.</p>
+<p><div class="highlight"><pre><span></span>simon@DESKTOP-OD3EGR1:~$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="p">|</span> <span class="nv">bash</span>
+<span class="o">=</span>&gt; Downloading nvm from git to <span class="s1">&#39;/home/simon/.nvm&#39;</span>
+<span class="o">=</span>&gt; Cloning into <span class="s1">&#39;/home/simon/.nvm&#39;</span>...
+remote: Enumerating objects: <span class="m">278</span>, <span class="k">done</span>.
+remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">278</span>/278<span class="o">)</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">249</span>/249<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">278</span> <span class="o">(</span>delta <span class="m">33</span><span class="o">)</span>, reused <span class="m">88</span> <span class="o">(</span>delta <span class="m">16</span><span class="o">)</span>, pack-reused <span class="m">0</span>
+Receiving objects: <span class="m">100</span>% <span class="o">(</span><span class="m">278</span>/278<span class="o">)</span>, <span class="m">142</span>.36 KiB <span class="p">|</span> <span class="m">90</span>.00 KiB/s, <span class="k">done</span>.
+Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">33</span>/33<span class="o">)</span>, <span class="k">done</span>.
+<span class="o">=</span>&gt; Compressing and cleaning up git <span class="nv">repository</span>
+
+<span class="o">=</span>&gt; Appending nvm <span class="nb">source</span> string to /home/simon/.bashrc
+<span class="o">=</span>&gt; Appending bash_completion <span class="nb">source</span> string to /home/simon/.bashrc
+<span class="o">=</span>&gt; You currently have modules installed globally with <span class="sb">`</span>npm<span class="sb">`</span>. These will <span class="nv">no</span>
+<span class="o">=</span>&gt; longer be linked to the active version of Node when you install a new <span class="nv">node</span>
+<span class="o">=</span>&gt; with <span class="sb">`</span>nvm<span class="sb">`</span><span class="p">;</span> and they may <span class="o">(</span>depending on how you construct your <span class="sb">`</span><span class="nv">$PATH</span><span class="sb">`</span><span class="o">)</span>
+<span class="o">=</span>&gt; override the binaries of modules installed with <span class="sb">`</span>nvm<span class="sb">`</span>:
+
+/usr/lib
+├── @vue/cli@3.0.5
+├── node-gyp@3.7.0
+<span class="o">=</span>&gt; If you wish to uninstall them at a later point <span class="o">(</span>or re-install them under <span class="nv">your</span>
+<span class="o">=</span>&gt; <span class="sb">`</span>nvm<span class="sb">`</span> Nodes<span class="o">)</span>, you can remove them from the system Node as follows:
+
+     $ nvm use system
+     $ npm uninstall -g <span class="nv">a_module</span>
+
+<span class="o">=</span>&gt; Close and reopen your terminal to start using nvm or run the following to use it now:
+
+<span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm&quot;</span>
+<span class="o">[</span> -s <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span>  <span class="c1"># This loads nvm</span>
+<span class="o">[</span> -s <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span>  <span class="c1"># This loads nvm bash_completion</span>
+</pre></div>
+Exit the current WSL shell and open a new one to examine the installation with:</p>
+<div class="highlight"><pre><span></span>simon@DESKTOP-OD3EGR1:~$ nvm --version
+<span class="m">0</span>.34.0
+</pre></div>
+
+<p>Please note that <code>which nvm</code> will not work, since nvm is a sourced shell function, not an executable binary.</p>
+<p>So far I installed <code>nvm</code> without removal of the existing system node installation. </p>
+<p>The existing system node still work by running an existing project <code>node index</code>.</p>
+<p>Try the command <code>nvm use system</code>.</p>
+<div class="highlight"><pre><span></span>nvm use system
+Now using system version of node: v8.11.3 <span class="o">(</span>npm v5.6.0<span class="o">)</span>
+</pre></div>
+
+<p>Try to install the latest version of node with nvm:</p>
+<div class="highlight"><pre><span></span>nvm install node
+Downloading and installing node v12.7.0...
+Downloading https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.xz...
+<span class="c1">######################################################################## 100.0%</span>
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v12.7.0 <span class="o">(</span>npm v6.10.0<span class="o">)</span>
+Creating default alias: default -&gt; node <span class="o">(</span>-&gt; v12.7.0<span class="o">)</span>
+</pre></div>
+
+<p>Check the installation:
+<div class="highlight"><pre><span></span>nvm ls
+-&gt;      v12.7.0
+         system
+default -&gt; node (-&gt; v12.7.0)
+node -&gt; stable (-&gt; v12.7.0) (default)
+stable -&gt; 12.7 (-&gt; v12.7.0) (default)
+iojs -&gt; N/A (default)
+unstable -&gt; N/A (default)
+lts/* -&gt; lts/dubnium (-&gt; N/A)
+lts/argon -&gt; v4.9.1 (-&gt; N/A)
+lts/boron -&gt; v6.17.1 (-&gt; N/A)
+lts/carbon -&gt; v8.16.0 (-&gt; N/A)
+lts/dubnium -&gt; v10.16.1 (-&gt; N/A)
+</pre></div></p>
+<p>Install the modules required by my app:</p>
+<h2 id="installation-of-better-sqlite3">Installation of better-sqlite3</h2>
+<p>In WSL, simply run the command <code>npm install better-sqlite3 --save</code> would not work.</p>
+<div class="highlight"><pre><span></span>$ npm install better-sqlite3 --save
+
+&gt; integer@2.1.0 install /mnt/d/cubby/js/better-sqlite-study/node_modules/integer
+&gt; node-gyp rebuild
+
+make: Entering directory &#39;/mnt/d/cubby/js/better-sqlite-study/node_modules/integer/build&#39;
+  CXX(target) Release/obj.target/integer/src/integer.o
+make: g++: Command not found
+integer.target.mk:110: recipe for target &#39;Release/obj.target/integer/src/integer.o&#39; failed
+make: *** [Release/obj.target/integer/src/integer.o] Error 127
+make: Leaving directory &#39;/mnt/d/cubby/js/better-sqlite-study/node_modules/integer/build&#39;
+gyp ERR! build error
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/home/simon/.nvm/versions/node/v12.7.0/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:266:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:203:13)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 4.4.0-18362-Microsoft
+gyp ERR! command &quot;/home/simon/.nvm/versions/node/v12.7.0/bin/node&quot; &quot;/home/simon/.nvm/versions/node/v12.7.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js&quot; &quot;rebuild&quot;
+gyp ERR! cwd /mnt/d/cubby/js/better-sqlite-study/node_modules/integer
+gyp ERR! node -v v12.7.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok
+npm WARN my-study@0.0.1 No repository field.
+npm WARN my-study@0.0.1 No license field.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! integer@2.1.0 install: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the integer@2.1.0 install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/simon/.npm/_logs/2019-08-05T19_17_39_351Z-debug.log
+</pre></div>
+
+<p>According the <a href="https://github.com/JoshuaWise/better-sqlite3/blob/master/docs/troubleshooting.md">troubleshoot doc</a>, there are several things to prepare:</p>
+<p><code>node-gyp</code>: I check  the <code>node-gyp</code> is installed under <code>npm</code>:
+<div class="highlight"><pre><span></span>$ npm ls node-gyp -g
+/home/simon/.nvm/versions/node/v12.7.0/lib
+└─┬ npm@6.10.0
+  ├── node-gyp@3.8.0
+  └─┬ npm-lifecycle@2.1.0
+    └── node-gyp@3.8.0  deduped 
+</pre></div></p>
+<p>According to <code>node-gyp</code> document (https://github.com/nodejs/node-gyp#installation), </p>
+<blockquote>
+<p>You will also need to install:</p>
+<p>On Unix
+python (v2.7 recommended, v3.x.x is not supported)
+make
+A proper C/C++ compiler toolchain, like GCC</p>
+</blockquote>
+<div class="highlight"><pre><span></span>$ which make
+/usr/bin/make
+</pre></div>
+
+<div class="highlight"><pre><span></span>$ python --version
+Python 2.7.14
+</pre></div>
+
+<div class="highlight"><pre><span></span>~$ g++
+The program &#39;g++&#39; is currently not installed. You can install it by typing:
+sudo apt install g++
+</pre></div>
+
+<p>Oh no <code>g++</code> installed in WSL. So install it as well.</p>
+<div class="highlight"><pre><span></span>$ sudo apt install g++
+[sudo] password for simon:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-7 g++-7 gcc gcc-7 libasan4 libatomic1 libbinutils
+  libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libgcc-7-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx2
+  libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev manpages-dev
+Suggested packages:
+  binutils-doc cpp-doc gcc-7-locales g++-multilib g++-7-multilib gcc-7-doc libstdc++6-7-dbg gcc-multilib autoconf
+  automake libtool flex bison gdb gcc-doc gcc-7-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg
+  libasan4-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx2-dbg libquadmath0-dbg glibc-doc
+  libstdc++-7-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-7 g++ g++-7 gcc gcc-7 libasan4 libatomic1 libbinutils
+  libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libgcc-7-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx2
+  libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev manpages-dev
+0 upgraded, 29 newly installed, 0 to remove and 0 not upgraded.
+Need to get 35.7 MB of archives.
+After this operation, 153 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Err:1 http://archive.ubuntu.com/ubuntu artful/main amd64 binutils-common amd64 2.29.1-4ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:2 http://archive.ubuntu.com/ubuntu artful/main amd64 libbinutils amd64 2.29.1-4ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:3 http://archive.ubuntu.com/ubuntu artful/main amd64 binutils-x86-64-linux-gnu amd64 2.29.1-4ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:4 http://archive.ubuntu.com/ubuntu artful/main amd64 binutils amd64 2.29.1-4ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:5 http://archive.ubuntu.com/ubuntu artful/main amd64 libisl15 amd64 0.18-1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:6 http://archive.ubuntu.com/ubuntu artful/main amd64 libmpc3 amd64 1.0.3-2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:7 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 cpp-7 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:8 http://archive.ubuntu.com/ubuntu artful/main amd64 cpp amd64 4:7.2.0-1ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:7 http://security.ubuntu.com/ubuntu artful-security/main amd64 cpp-7 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:9 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libcc1-0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:9 http://security.ubuntu.com/ubuntu artful-security/main amd64 libcc1-0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:10 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libgomp1 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:11 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libitm1 amd64 7.2.0-8ubuntu3.2
+Err:10 http://security.ubuntu.com/ubuntu artful-security/main amd64 libgomp1 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:12 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libatomic1 amd64 7.2.0-8ubuntu3.2
+Err:11 http://security.ubuntu.com/ubuntu artful-security/main amd64 libitm1 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:13 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libasan4 amd64 7.2.0-8ubuntu3.2
+Err:12 http://security.ubuntu.com/ubuntu artful-security/main amd64 libatomic1 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:14 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 liblsan0 amd64 7.2.0-8ubuntu3.2
+Err:13 http://security.ubuntu.com/ubuntu artful-security/main amd64 libasan4 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:15 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libtsan0 amd64 7.2.0-8ubuntu3.2
+Err:14 http://security.ubuntu.com/ubuntu artful-security/main amd64 liblsan0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:16 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libubsan0 amd64 7.2.0-8ubuntu3.2
+Err:15 http://security.ubuntu.com/ubuntu artful-security/main amd64 libtsan0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:17 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libcilkrts5 amd64 7.2.0-8ubuntu3.2
+Err:16 http://security.ubuntu.com/ubuntu artful-security/main amd64 libubsan0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:18 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libmpx2 amd64 7.2.0-8ubuntu3.2
+Err:17 http://security.ubuntu.com/ubuntu artful-security/main amd64 libcilkrts5 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:19 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libquadmath0 amd64 7.2.0-8ubuntu3.2
+Err:18 http://security.ubuntu.com/ubuntu artful-security/main amd64 libmpx2 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:19 http://security.ubuntu.com/ubuntu artful-security/main amd64 libquadmath0 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:20 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libgcc-7-dev amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:20 http://security.ubuntu.com/ubuntu artful-security/main amd64 libgcc-7-dev amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:21 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 gcc-7 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:22 http://archive.ubuntu.com/ubuntu artful/main amd64 gcc amd64 4:7.2.0-1ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:23 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libc-dev-bin amd64 2.26-0ubuntu2.1
+Ign:24 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 linux-libc-dev amd64 4.13.0-46.51
+Err:21 http://security.ubuntu.com/ubuntu artful-security/main amd64 gcc-7 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:25 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libc6-dev amd64 2.26-0ubuntu2.1
+Err:23 http://security.ubuntu.com/ubuntu artful-security/main amd64 libc-dev-bin amd64 2.26-0ubuntu2.1
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:26 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 libstdc++-7-dev amd64 7.2.0-8ubuntu3.2
+Err:24 http://security.ubuntu.com/ubuntu artful-security/main amd64 linux-libc-dev amd64 4.13.0-46.51
+  404  Not Found [IP: 91.189.88.24 80]
+Err:25 http://security.ubuntu.com/ubuntu artful-security/main amd64 libc6-dev amd64 2.26-0ubuntu2.1
+  404  Not Found [IP: 91.189.88.24 80]
+Ign:27 http://archive.ubuntu.com/ubuntu artful-updates/main amd64 g++-7 amd64 7.2.0-8ubuntu3.2
+Err:26 http://security.ubuntu.com/ubuntu artful-security/main amd64 libstdc++-7-dev amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:27 http://security.ubuntu.com/ubuntu artful-security/main amd64 g++-7 amd64 7.2.0-8ubuntu3.2
+  404  Not Found [IP: 91.189.88.24 80]
+Err:28 http://archive.ubuntu.com/ubuntu artful/main amd64 g++ amd64 4:7.2.0-1ubuntu1
+  404  Not Found [IP: 91.189.88.24 80]
+Err:29 http://archive.ubuntu.com/ubuntu artful/main amd64 manpages-dev all 4.13-3
+  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils-common_2.29.1-4ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/libbinutils_2.29.1-4ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils-x86-64-linux-gnu_2.29.1-4ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.29.1-4ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/i/isl/libisl15_0.18-1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/m/mpclib3/libmpc3_1.0.3-2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/cpp-7_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/cpp_7.2.0-1ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libcc1-0_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libgomp1_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libitm1_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libatomic1_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libasan4_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/liblsan0_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libtsan0_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libubsan0_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libcilkrts5_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libmpx2_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libquadmath0_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libgcc-7-dev_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc_7.2.0-1ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/glibc/libc-dev-bin_2.26-0ubuntu2.1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.13.0-46.51_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.26-0ubuntu2.1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/libstdc++-7-dev_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-7/g++-7_7.2.0-8ubuntu3.2_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/g++_7.2.0-1ubuntu1_amd64.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/m/manpages/manpages-dev_4.13-3_all.deb  404  Not Found [IP: 91.189.88.24 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+</pre></div>
+
+<p>Not Work! Try another command <code>apt-get install g++</code> but still no luck!</p>
+<p>The problem is described <a href="https://futurestud.io/tutorials/how-to-fix-ubuntu-debian-apt-get-404-not-found-repository-errors">here</a>:</p>
+<blockquote>
+<p>You may see messages like the ones below when executing apt-get update or apt-get install. That is because Ubuntu releases are only supported for 9 months. LTS (Long Term Support) releases have support for 5 years. Once support is cut for the version you're using, you'll see those error messages. Ubuntu moves the repositories to another server and the defined URL to reach the sources are no longer available on default location http://archive.ubuntu.com/ubuntu/dist/.</p>
+</blockquote>
+<p>I try the recommended command <code>sudo sed -i -e 's/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list</code> to add a source in the file. And then try to update the apt-get.</p>
+<div class="highlight"><pre><span></span>$ sudo apt-get update
+Get:1 http://old-releases.ubuntu.com/ubuntu artful InRelease <span class="o">[</span><span class="m">237</span> kB<span class="o">]</span>
+Get:2 http://old-releases.ubuntu.com/ubuntu artful-updates InRelease <span class="o">[</span><span class="m">88</span>.7 kB<span class="o">]</span>
+Get:3 http://old-releases.ubuntu.com/ubuntu artful-backports InRelease <span class="o">[</span><span class="m">74</span>.6 kB<span class="o">]</span>
+Get:4 http://old-releases.ubuntu.com/ubuntu artful-security InRelease <span class="o">[</span><span class="m">83</span>.2 kB<span class="o">]</span>
+Get:5 http://old-releases.ubuntu.com/ubuntu artful/main amd64 Packages <span class="o">[</span><span class="m">1</span>,071 kB<span class="o">]</span>
+Get:6 http://old-releases.ubuntu.com/ubuntu artful/main Translation-en <span class="o">[</span><span class="m">542</span> kB<span class="o">]</span>
+Get:7 http://old-releases.ubuntu.com/ubuntu artful/restricted amd64 Packages <span class="o">[</span><span class="m">8</span>,852 B<span class="o">]</span>
+Get:8 http://old-releases.ubuntu.com/ubuntu artful/restricted Translation-en <span class="o">[</span><span class="m">2</span>,788 B<span class="o">]</span>
+Get:9 http://old-releases.ubuntu.com/ubuntu artful/universe amd64 Packages <span class="o">[</span><span class="m">8</span>,103 kB<span class="o">]</span>
+Get:10 http://old-releases.ubuntu.com/ubuntu artful/universe Translation-en <span class="o">[</span><span class="m">4</span>,789 kB<span class="o">]</span>
+Get:11 http://old-releases.ubuntu.com/ubuntu artful/multiverse amd64 Packages <span class="o">[</span><span class="m">150</span> kB<span class="o">]</span>
+Get:12 http://old-releases.ubuntu.com/ubuntu artful/multiverse Translation-en <span class="o">[</span><span class="m">108</span> kB<span class="o">]</span>
+Get:13 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 Packages <span class="o">[</span><span class="m">272</span> kB<span class="o">]</span>
+Get:14 http://old-releases.ubuntu.com/ubuntu artful-updates/main Translation-en <span class="o">[</span><span class="m">124</span> kB<span class="o">]</span>
+Get:15 http://old-releases.ubuntu.com/ubuntu artful-updates/restricted amd64 Packages <span class="o">[</span><span class="m">2</span>,200 B<span class="o">]</span>
+Get:16 http://old-releases.ubuntu.com/ubuntu artful-updates/restricted Translation-en <span class="o">[</span><span class="m">1</span>,284 B<span class="o">]</span>
+Get:17 http://old-releases.ubuntu.com/ubuntu artful-updates/universe amd64 Packages <span class="o">[</span><span class="m">124</span> kB<span class="o">]</span>
+Get:18 http://old-releases.ubuntu.com/ubuntu artful-updates/universe Translation-en <span class="o">[</span><span class="m">69</span>.6 kB<span class="o">]</span>
+Get:19 http://old-releases.ubuntu.com/ubuntu artful-updates/multiverse amd64 Packages <span class="o">[</span><span class="m">4</span>,128 B<span class="o">]</span>
+Get:20 http://old-releases.ubuntu.com/ubuntu artful-updates/multiverse Translation-en <span class="o">[</span><span class="m">2</span>,264 B<span class="o">]</span>
+Get:21 http://old-releases.ubuntu.com/ubuntu artful-backports/main amd64 Packages <span class="o">[</span><span class="m">1</span>,516 B<span class="o">]</span>
+Get:22 http://old-releases.ubuntu.com/ubuntu artful-backports/main Translation-en <span class="o">[</span><span class="m">668</span> B<span class="o">]</span>
+Get:23 http://old-releases.ubuntu.com/ubuntu artful-backports/universe amd64 Packages <span class="o">[</span><span class="m">4</span>,076 B<span class="o">]</span>
+Get:24 http://old-releases.ubuntu.com/ubuntu artful-backports/universe Translation-en <span class="o">[</span><span class="m">2</span>,116 B<span class="o">]</span>
+Get:25 http://old-releases.ubuntu.com/ubuntu artful-security/main amd64 Packages <span class="o">[</span><span class="m">176</span> kB<span class="o">]</span>
+Get:26 http://old-releases.ubuntu.com/ubuntu artful-security/main Translation-en <span class="o">[</span><span class="m">80</span>.1 kB<span class="o">]</span>
+Get:27 http://old-releases.ubuntu.com/ubuntu artful-security/restricted amd64 Packages <span class="o">[</span><span class="m">2</span>,200 B<span class="o">]</span>
+Get:28 http://old-releases.ubuntu.com/ubuntu artful-security/restricted Translation-en <span class="o">[</span><span class="m">1</span>,284 B<span class="o">]</span>
+Get:29 http://old-releases.ubuntu.com/ubuntu artful-security/universe amd64 Packages <span class="o">[</span><span class="m">72</span>.0 kB<span class="o">]</span>
+Get:30 http://old-releases.ubuntu.com/ubuntu artful-security/universe Translation-en <span class="o">[</span><span class="m">42</span>.8 kB<span class="o">]</span>
+Get:31 http://old-releases.ubuntu.com/ubuntu artful-security/multiverse amd64 Packages <span class="o">[</span><span class="m">1</span>,824 B<span class="o">]</span>
+Get:32 http://old-releases.ubuntu.com/ubuntu artful-security/multiverse Translation-en <span class="o">[</span><span class="m">1</span>,124 B<span class="o">]</span>
+Fetched <span class="m">16</span>.2 MB in 6min 27s <span class="o">(</span><span class="m">41</span>.9 kB/s<span class="o">)</span>
+Reading package lists... Done
+</pre></div>
+
+<p>Install g++ again with <code>sudo apt-get installl g++</code></p>
+<div class="highlight"><pre><span></span>$ sudo apt-get install g++
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-7 g++-7 gcc gcc-7 libasan4 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0 libcilkrts5
+  libgcc-7-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx2 libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev manpages-dev
+Suggested packages:
+  binutils-doc cpp-doc gcc-7-locales g++-multilib g++-7-multilib gcc-7-doc libstdc++6-7-dbg gcc-multilib autoconf automake libtool flex bison gdb gcc-doc
+  gcc-7-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg libasan4-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx2-dbg
+  libquadmath0-dbg glibc-doc libstdc++-7-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-7 g++ g++-7 gcc gcc-7 libasan4 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0
+  libcilkrts5 libgcc-7-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx2 libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev manpages-dev
+<span class="m">0</span> upgraded, <span class="m">29</span> newly installed, <span class="m">0</span> to remove and <span class="m">2</span> not upgraded.
+Need to get <span class="m">35</span>.7 MB of archives.
+After this operation, <span class="m">153</span> MB of additional disk space will be used.
+Do you want to <span class="k">continue</span>? <span class="o">[</span>Y/n<span class="o">]</span> y
+Get:1 http://old-releases.ubuntu.com/ubuntu artful/main amd64 binutils-common amd64 <span class="m">2</span>.29.1-4ubuntu1 <span class="o">[</span><span class="m">190</span> kB<span class="o">]</span>
+Get:2 http://old-releases.ubuntu.com/ubuntu artful/main amd64 libbinutils amd64 <span class="m">2</span>.29.1-4ubuntu1 <span class="o">[</span><span class="m">502</span> kB<span class="o">]</span>
+Get:3 http://old-releases.ubuntu.com/ubuntu artful/main amd64 binutils-x86-64-linux-gnu amd64 <span class="m">2</span>.29.1-4ubuntu1 <span class="o">[</span><span class="m">1</span>,824 kB<span class="o">]</span>
+Get:4 http://old-releases.ubuntu.com/ubuntu artful/main amd64 binutils amd64 <span class="m">2</span>.29.1-4ubuntu1 <span class="o">[</span><span class="m">3</span>,342 B<span class="o">]</span>
+Get:5 http://old-releases.ubuntu.com/ubuntu artful/main amd64 libisl15 amd64 <span class="m">0</span>.18-1 <span class="o">[</span><span class="m">545</span> kB<span class="o">]</span>
+Get:6 http://old-releases.ubuntu.com/ubuntu artful/main amd64 libmpc3 amd64 <span class="m">1</span>.0.3-2 <span class="o">[</span><span class="m">39</span>.5 kB<span class="o">]</span>
+Get:7 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 cpp-7 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">6</span>,732 kB<span class="o">]</span>
+Get:8 http://old-releases.ubuntu.com/ubuntu artful/main amd64 cpp amd64 <span class="m">4</span>:7.2.0-1ubuntu1 <span class="o">[</span><span class="m">27</span>.6 kB<span class="o">]</span>
+Get:9 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libcc1-0 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">38</span>.7 kB<span class="o">]</span>
+Get:10 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libgomp1 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">76</span>.4 kB<span class="o">]</span>
+Get:11 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libitm1 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">27</span>.6 kB<span class="o">]</span>
+Get:12 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libatomic1 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">8</span>,950 B<span class="o">]</span>
+Get:13 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libasan4 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">360</span> kB<span class="o">]</span>
+Get:14 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 liblsan0 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">133</span> kB<span class="o">]</span>
+Get:15 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libtsan0 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">282</span> kB<span class="o">]</span>
+Get:16 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libubsan0 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">126</span> kB<span class="o">]</span>
+Get:17 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libcilkrts5 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">42</span>.6 kB<span class="o">]</span>
+Get:18 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libmpx2 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">11</span>.7 kB<span class="o">]</span>
+Get:19 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libquadmath0 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">133</span> kB<span class="o">]</span>
+Get:20 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libgcc-7-dev amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">2</span>,368 kB<span class="o">]</span>
+Get:21 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 gcc-7 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">7</span>,418 kB<span class="o">]</span>
+Get:22 http://old-releases.ubuntu.com/ubuntu artful/main amd64 gcc amd64 <span class="m">4</span>:7.2.0-1ubuntu1 <span class="o">[</span><span class="m">5</span>,124 B<span class="o">]</span>
+Get:23 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libc-dev-bin amd64 <span class="m">2</span>.26-0ubuntu2.1 <span class="o">[</span><span class="m">69</span>.5 kB<span class="o">]</span>
+Get:24 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 linux-libc-dev amd64 <span class="m">4</span>.13.0-46.51 <span class="o">[</span><span class="m">960</span> kB<span class="o">]</span>
+Get:25 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libc6-dev amd64 <span class="m">2</span>.26-0ubuntu2.1 <span class="o">[</span><span class="m">2</span>,526 kB<span class="o">]</span>
+Get:26 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 libstdc++-7-dev amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">1</span>,456 kB<span class="o">]</span>
+Get:27 http://old-releases.ubuntu.com/ubuntu artful-updates/main amd64 g++-7 amd64 <span class="m">7</span>.2.0-8ubuntu3.2 <span class="o">[</span><span class="m">7</span>,555 kB<span class="o">]</span>
+Get:28 http://old-releases.ubuntu.com/ubuntu artful/main amd64 g++ amd64 <span class="m">4</span>:7.2.0-1ubuntu1 <span class="o">[</span><span class="m">1</span>,482 B<span class="o">]</span>
+Get:29 http://old-releases.ubuntu.com/ubuntu artful/main amd64 manpages-dev all <span class="m">4</span>.13-3 <span class="o">[</span><span class="m">2</span>,202 kB<span class="o">]</span>
+Fetched <span class="m">35</span>.7 MB in 13min 12s <span class="o">(</span><span class="m">45</span>.0 kB/s<span class="o">)</span>
+Selecting previously unselected package binutils-common:amd64.
+<span class="o">(</span>Reading database ... <span class="m">33421</span> files and directories currently installed.<span class="o">)</span>
+Preparing to unpack .../00-binutils-common_2.29.1-4ubuntu1_amd64.deb ...
+Unpacking binutils-common:amd64 <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../01-libbinutils_2.29.1-4ubuntu1_amd64.deb ...
+Unpacking libbinutils:amd64 <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../02-binutils-x86-64-linux-gnu_2.29.1-4ubuntu1_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../03-binutils_2.29.1-4ubuntu1_amd64.deb ...
+Unpacking binutils <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package libisl15:amd64.
+Preparing to unpack .../04-libisl15_0.18-1_amd64.deb ...
+Unpacking libisl15:amd64 <span class="o">(</span><span class="m">0</span>.18-1<span class="o">)</span> ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../05-libmpc3_1.0.3-2_amd64.deb ...
+Unpacking libmpc3:amd64 <span class="o">(</span><span class="m">1</span>.0.3-2<span class="o">)</span> ...
+Selecting previously unselected package cpp-7.
+Preparing to unpack .../06-cpp-7_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking cpp-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../07-cpp_4%3a7.2.0-1ubuntu1_amd64.deb ...
+Unpacking cpp <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../08-libcc1-0_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libcc1-0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../09-libgomp1_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libgomp1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../10-libitm1_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libitm1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../11-libatomic1_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libatomic1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libasan4:amd64.
+Preparing to unpack .../12-libasan4_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libasan4:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../13-liblsan0_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking liblsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../14-libtsan0_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libtsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libubsan0:amd64.
+Preparing to unpack .../15-libubsan0_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libubsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libcilkrts5:amd64.
+Preparing to unpack .../16-libcilkrts5_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libcilkrts5:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libmpx2:amd64.
+Preparing to unpack .../17-libmpx2_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libmpx2:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../18-libquadmath0_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libquadmath0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package libgcc-7-dev:amd64.
+Preparing to unpack .../19-libgcc-7-dev_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libgcc-7-dev:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package gcc-7.
+Preparing to unpack .../20-gcc-7_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking gcc-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../21-gcc_4%3a7.2.0-1ubuntu1_amd64.deb ...
+Unpacking gcc <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../22-libc-dev-bin_2.26-0ubuntu2.1_amd64.deb ...
+Unpacking libc-dev-bin <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../23-linux-libc-dev_4.13.0-46.51_amd64.deb ...
+Unpacking linux-libc-dev:amd64 <span class="o">(</span><span class="m">4</span>.13.0-46.51<span class="o">)</span> ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../24-libc6-dev_2.26-0ubuntu2.1_amd64.deb ...
+Unpacking libc6-dev:amd64 <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+Selecting previously unselected package libstdc++-7-dev:amd64.
+Preparing to unpack .../25-libstdc++-7-dev_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking libstdc++-7-dev:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package g++-7.
+Preparing to unpack .../26-g++-7_7.2.0-8ubuntu3.2_amd64.deb ...
+Unpacking g++-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Selecting previously unselected package g++.
+Preparing to unpack .../27-g++_4%3a7.2.0-1ubuntu1_amd64.deb ...
+Unpacking g++ <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../28-manpages-dev_4.13-3_all.deb ...
+Unpacking manpages-dev <span class="o">(</span><span class="m">4</span>.13-3<span class="o">)</span> ...
+Setting up libquadmath0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libgomp1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libatomic1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libcc1-0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libasan4:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libcilkrts5:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libubsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libtsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up linux-libc-dev:amd64 <span class="o">(</span><span class="m">4</span>.13.0-46.51<span class="o">)</span> ...
+Setting up liblsan0:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up binutils-common:amd64 <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Setting up libmpx2:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libisl15:amd64 <span class="o">(</span><span class="m">0</span>.18-1<span class="o">)</span> ...
+Processing triggers <span class="k">for</span> libc-bin <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+Processing triggers <span class="k">for</span> man-db <span class="o">(</span><span class="m">2</span>.7.6.1-2<span class="o">)</span> ...
+Setting up libmpc3:amd64 <span class="o">(</span><span class="m">1</span>.0.3-2<span class="o">)</span> ...
+Setting up libc-dev-bin <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+Setting up manpages-dev <span class="o">(</span><span class="m">4</span>.13-3<span class="o">)</span> ...
+Setting up libc6-dev:amd64 <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+Setting up libitm1:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libbinutils:amd64 <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Setting up libgcc-7-dev:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up cpp-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up libstdc++-7-dev:amd64 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up binutils-x86-64-linux-gnu <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Setting up cpp <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+Setting up binutils <span class="o">(</span><span class="m">2</span>.29.1-4ubuntu1<span class="o">)</span> ...
+Setting up gcc-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up g++-7 <span class="o">(</span><span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> ...
+Setting up gcc <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+Setting up g++ <span class="o">(</span><span class="m">4</span>:7.2.0-1ubuntu1<span class="o">)</span> ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ <span class="o">(</span>c++<span class="o">)</span> in auto mode
+Processing triggers <span class="k">for</span> libc-bin <span class="o">(</span><span class="m">2</span>.26-0ubuntu2.1<span class="o">)</span> ...
+</pre></div>
+
+<p>Check the installation:</p>
+<div class="highlight"><pre><span></span>$ g++ --version
+g++ <span class="o">(</span>Ubuntu <span class="m">7</span>.2.0-8ubuntu3.2<span class="o">)</span> <span class="m">7</span>.2.0
+Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2017</span> Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.  There is NO
+warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</pre></div>
+
+<p>Run the command <code>npm install better-sqlite3 --save</code> again:</p>
+<div class="highlight"><pre><span></span>$ npm install better-sqlite3 --save
+
+&gt; integer@2.1.0 install /mnt/d/cubby/js/better-sqlite-study/node_modules/integer
+&gt; node-gyp rebuild
+
+make: Entering directory <span class="s1">&#39;/mnt/d/cubby/js/better-sqlite-study/node_modules/integer/build&#39;</span>
+  CXX<span class="o">(</span>target<span class="o">)</span> Release/obj.target/integer/src/integer.o
+  SOLINK_MODULE<span class="o">(</span>target<span class="o">)</span> Release/obj.target/integer.node
+  COPY Release/integer.node
+  COPY ../build/integer.node
+  TOUCH Release/obj.target/place_resulting_binary.stamp
+make: Leaving directory <span class="s1">&#39;/mnt/d/cubby/js/better-sqlite-study/node_modules/integer/build&#39;</span>
+
+&gt; better-sqlite3@5.4.2 install /mnt/d/cubby/js/better-sqlite-study/node_modules/better-sqlite3
+&gt; node-gyp rebuild
+
+make: Entering directory <span class="s1">&#39;/mnt/d/cubby/js/better-sqlite-study/node_modules/better-sqlite3/build&#39;</span>
+  TOUCH b857c92884e9598d609f6be182a2595df7a8e00f.intermediate
+  ACTION deps_sqlite3_gyp_locate_sqlite3_target_extract_sqlite3 b857c92884e9598d609f6be182a2595df7a8e00f.intermediate
+  TOUCH Release/obj.target/deps/locate_sqlite3.stamp
+  CC<span class="o">(</span>target<span class="o">)</span> Release/obj.target/sqlite3/gen/sqlite3/sqlite3.o
+Release/obj/gen/sqlite3/sqlite3.c: In <span class="k">function</span> ‘sqlite3_db_status’:
+Release/obj/gen/sqlite3/sqlite3.c:20945:10: warning: this statement may fall through <span class="o">[</span>-Wimplicit-fallthrough<span class="o">=]</span>
+       <span class="nv">op</span> <span class="o">=</span> SQLITE_DBSTATUS_CACHE_WRITE+1<span class="p">;</span>
+       ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Release/obj/gen/sqlite3/sqlite3.c:20947:5: note: here
+     <span class="k">case</span> SQLITE_DBSTATUS_CACHE_HIT:
+     ^~~~
+Release/obj/gen/sqlite3/sqlite3.c: In <span class="k">function</span> ‘sqlite3_str_vappendf’:
+Release/obj/gen/sqlite3/sqlite3.c:27701:19: warning: this statement may fall through <span class="o">[</span>-Wimplicit-fallthrough<span class="o">=]</span>
+         <span class="nv">flag_long</span> <span class="o">=</span> sizeof<span class="o">(</span>char*<span class="o">)==</span>sizeof<span class="o">(</span>i64<span class="o">)</span> ? <span class="m">2</span> :
+         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      sizeof<span class="o">(</span>char*<span class="o">)==</span>sizeof<span class="o">(</span>long int<span class="o">)</span> ? <span class="m">1</span> : <span class="m">0</span><span class="p">;</span>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Release/obj/gen/sqlite3/sqlite3.c:27704:7: note: here
+       <span class="k">case</span> etORDINAL:
+       ^~~~
+Release/obj/gen/sqlite3/sqlite3.c:27706:19: warning: this statement may fall through <span class="o">[</span>-Wimplicit-fallthrough<span class="o">=]</span>
+         <span class="nv">cThousand</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+         ~~~~~~~~~~^~~
+Release/obj/gen/sqlite3/sqlite3.c:27708:7: note: here
+       <span class="k">case</span> etDECIMAL:
+       ^~~~
+Release/obj/gen/sqlite3/sqlite3.c: In <span class="k">function</span> ‘sqlite3GetToken’:
+Release/obj/gen/sqlite3/sqlite3.c:154367:9: warning: this statement may fall through <span class="o">[</span>-Wimplicit-fallthrough<span class="o">=]</span>
+       <span class="k">if</span><span class="o">(</span> !sqlite3Isdigit<span class="o">(</span>z<span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">)</span>
+         ^
+Release/obj/gen/sqlite3/sqlite3.c:154376:5: note: here
+     <span class="k">case</span> CC_DIGIT: <span class="o">{</span>
+     ^~~~
+Release/obj/gen/sqlite3/sqlite3.c:154466:9: warning: this statement may fall through <span class="o">[</span>-Wimplicit-fallthrough<span class="o">=]</span>
+       <span class="k">if</span><span class="o">(</span> z<span class="o">[</span><span class="m">1</span><span class="o">]==</span><span class="s1">&#39;\&#39;&#39; ){</span>
+<span class="s1">         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:154480:5: note: here</span>
+<span class="s1">     case CC_ID: {</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘sqlite3ExprCodeTarget’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:100682:25: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case TK_AGG_COLUMN: {</span>
+<span class="s1">                         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:100695:5: note: here</span>
+<span class="s1">     case TK_COLUMN: {</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘resolveP2Values’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:77185:13: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">           if( pOp-&gt;p2!=0 ) p-&gt;readOnly = 0;</span>
+<span class="s1">             ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:77188:9: note: here</span>
+<span class="s1">         case OP_AutoCommit:</span>
+<span class="s1">         ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:77226:26: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         case OP_VFilter: {</span>
+<span class="s1">                          ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:77235:9: note: here</span>
+<span class="s1">         default: {</span>
+<span class="s1">         ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘resolveExprStep’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:96366:20: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case TK_ISNOT: {</span>
+<span class="s1">                    ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:96382:5: note: here</span>
+<span class="s1">     case TK_BETWEEN:</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘impliesNotNullRow’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:102309:8: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       if( (pExpr-&gt;pLeft-&gt;op==TK_COLUMN &amp;&amp; IsVirtual(pExpr-&gt;pLeft-&gt;y.pTab))</span>
+<span class="s1">           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">        || (pExpr-&gt;pRight-&gt;op==TK_COLUMN &amp;&amp; IsVirtual(pExpr-&gt;pRight-&gt;y.pTab))</span>
+<span class="s1">        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:102313:5: note: here</span>
+<span class="s1">     default:</span>
+<span class="s1">     ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘exprImpliesNotNull’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:102188:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       if( exprImpliesNotNull(pParse, p-&gt;pRight, pNN, iTab, seenNot) ) return 1;</span>
+<span class="s1">         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:102191:5: note: here</span>
+<span class="s1">     case TK_SPAN:</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘fkActionTrigger’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:116863:11: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         if( !pChanges ){</span>
+<span class="s1">           ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:116867:7: note: here</span>
+<span class="s1">       default:</span>
+<span class="s1">       ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘sqlite3GenerateConstraintChecks’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118331:17: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         onError = OE_Abort;</span>
+<span class="s1">                 ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118335:7: note: here</span>
+<span class="s1">       case OE_Abort:</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118493:17: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         onError = OE_Abort;</span>
+<span class="s1">                 ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118496:7: note: here</span>
+<span class="s1">       case OE_Rollback:</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118556:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         sqlite3UpsertDoUpdate(pParse, pUpsert, pTab, 0, iDataCur);</span>
+<span class="s1">         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118560:7: note: here</span>
+<span class="s1">       case OE_Ignore: {</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118772:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         sqlite3UpsertDoUpdate(pParse, pUpsert, pTab, pIdx, iIdxCur+ix);</span>
+<span class="s1">         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:118776:7: note: here</span>
+<span class="s1">       case OE_Ignore: {</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘sqlite3VdbeExec’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:84796:5: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">   if( (pIn3-&gt;flags &amp; MEM_Null)==0 ) break;</span>
+<span class="s1">     ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:84830:1: note: here</span>
+<span class="s1"> case OP_Halt: {</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:84963:5: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">   if( pOp-&gt;p1&gt;db-&gt;aLimit[SQLITE_LIMIT_LENGTH] ){</span>
+<span class="s1">     ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:84982:1: note: here</span>
+<span class="s1"> case OP_String: {          /* out2 */</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:88088:19: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1"> case OP_IfNoHope: {     /* jump, in3 */</span>
+<span class="s1">                   ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:88096:1: note: here</span>
+<span class="s1"> case OP_NoConflict:     /* jump, in3 */</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:89014:38: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">   p-&gt;aCounter[SQLITE_STMTSTATUS_SORT]++;</span>
+<span class="s1">   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:89029:1: note: here</span>
+<span class="s1"> case OP_Rewind: {        /* jump */</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:90325:15: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">   pOp-&gt;opcode = OP_AggStep1;</span>
+<span class="s1">               ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:90328:1: note: here</span>
+<span class="s1"> case OP_AggStep1: {</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:91197:15: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">   pOp-&gt;opcode += 2;</span>
+<span class="s1">   ~~~~~~~~~~~~^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:91200:1: note: here</span>
+<span class="s1"> case OP_PureFunc:              /* group */</span>
+<span class="s1"> ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘fts3SnippetFunc’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164529:20: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case 6: nToken = sqlite3_value_int(apVal[5]);</span>
+<span class="s1">             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164530:5: note: here</span>
+<span class="s1">     case 5: iCol = sqlite3_value_int(apVal[4]);</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164530:18: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case 5: iCol = sqlite3_value_int(apVal[4]);</span>
+<span class="s1">             ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164531:5: note: here</span>
+<span class="s1">     case 4: zEllipsis = (const char*)sqlite3_value_text(apVal[3]);</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164531:23: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case 4: zEllipsis = (const char*)sqlite3_value_text(apVal[3]);</span>
+<span class="s1">             ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164532:5: note: here</span>
+<span class="s1">     case 3: zEnd = (const char*)sqlite3_value_text(apVal[2]);</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164532:18: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">     case 3: zEnd = (const char*)sqlite3_value_text(apVal[2]);</span>
+<span class="s1">             ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164533:5: note: here</span>
+<span class="s1">     case 2: zStart = (const char*)sqlite3_value_text(apVal[1]);</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘fts3ColumnMethod’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164286:14: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">         iCol = p-&gt;nColumn;</span>
+<span class="s1">         ~~~~~^~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:164290:5: note: here</span>
+<span class="s1">     default:</span>
+<span class="s1">     ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘cellArea’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183792:22: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 5:  area  = p-&gt;aCoord[9].f - p-&gt;aCoord[8].f;</span>
+<span class="s1">                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183793:7: note: here</span>
+<span class="s1">       case 4:  area *= p-&gt;aCoord[7].f - p-&gt;aCoord[6].f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183793:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 4:  area *= p-&gt;aCoord[7].f - p-&gt;aCoord[6].f;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183794:7: note: here</span>
+<span class="s1">       case 3:  area *= p-&gt;aCoord[5].f - p-&gt;aCoord[4].f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183794:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 3:  area *= p-&gt;aCoord[5].f - p-&gt;aCoord[4].f;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183795:7: note: here</span>
+<span class="s1">       case 2:  area *= p-&gt;aCoord[3].f - p-&gt;aCoord[2].f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183795:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 2:  area *= p-&gt;aCoord[3].f - p-&gt;aCoord[2].f;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183796:7: note: here</span>
+<span class="s1">       default: area *= p-&gt;aCoord[1].f - p-&gt;aCoord[0].f;</span>
+<span class="s1">       ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183802:22: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 5:  area  = (i64)p-&gt;aCoord[9].i - (i64)p-&gt;aCoord[8].i;</span>
+<span class="s1">                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183803:7: note: here</span>
+<span class="s1">       case 4:  area *= (i64)p-&gt;aCoord[7].i - (i64)p-&gt;aCoord[6].i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183803:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 4:  area *= (i64)p-&gt;aCoord[7].i - (i64)p-&gt;aCoord[6].i;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183804:7: note: here</span>
+<span class="s1">       case 3:  area *= (i64)p-&gt;aCoord[5].i - (i64)p-&gt;aCoord[4].i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183804:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 3:  area *= (i64)p-&gt;aCoord[5].i - (i64)p-&gt;aCoord[4].i;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183805:7: note: here</span>
+<span class="s1">       case 2:  area *= (i64)p-&gt;aCoord[3].i - (i64)p-&gt;aCoord[2].i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183805:21: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       case 2:  area *= (i64)p-&gt;aCoord[3].i - (i64)p-&gt;aCoord[2].i;</span>
+<span class="s1">                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183806:7: note: here</span>
+<span class="s1">       default: area *= (i64)p-&gt;aCoord[1].i - (i64)p-&gt;aCoord[0].i;</span>
+<span class="s1">       ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘rtreeCallbackConstraint’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182974:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+32, &amp;c); aCoord[8] = c.f;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182975:7: note: here</span>
+<span class="s1">       case 8:   readCoord(pCellData+28, &amp;c); aCoord[7] = c.f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182976:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+24, &amp;c); aCoord[6] = c.f;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182977:7: note: here</span>
+<span class="s1">       case 6:   readCoord(pCellData+20, &amp;c); aCoord[5] = c.f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182978:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+16, &amp;c); aCoord[4] = c.f;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182979:7: note: here</span>
+<span class="s1">       case 4:   readCoord(pCellData+12, &amp;c); aCoord[3] = c.f;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182980:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+8,  &amp;c); aCoord[2] = c.f;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182981:7: note: here</span>
+<span class="s1">       default:  readCoord(pCellData+4,  &amp;c); aCoord[1] = c.f;</span>
+<span class="s1">       ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182989:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+32, &amp;c); aCoord[8] = c.i;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182990:7: note: here</span>
+<span class="s1">       case 8:   readCoord(pCellData+28, &amp;c); aCoord[7] = c.i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182991:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+24, &amp;c); aCoord[6] = c.i;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182992:7: note: here</span>
+<span class="s1">       case 6:   readCoord(pCellData+20, &amp;c); aCoord[5] = c.i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182993:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+16, &amp;c); aCoord[4] = c.i;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182994:7: note: here</span>
+<span class="s1">       case 4:   readCoord(pCellData+12, &amp;c); aCoord[3] = c.i;</span>
+<span class="s1">       ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182995:56: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">                 readCoord(pCellData+8,  &amp;c); aCoord[2] = c.i;</span>
+<span class="s1">                                              ~~~~~~~~~~^~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:182996:7: note: here</span>
+<span class="s1">       default:  readCoord(pCellData+4,  &amp;c); aCoord[1] = c.i;</span>
+<span class="s1">       ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘rtreeNonleafConstraint’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183048:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       if( p-&gt;op!=RTREE_EQ ) break;  /* RTREE_LE and RTREE_LT end here */</span>
+<span class="s1">         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:183051:5: note: here</span>
+<span class="s1">     default: /* RTREE_GT or RTREE_GE,  or fallthrough of RTREE_EQ */</span>
+<span class="s1">     ^~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘jsonRenderNode’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:179708:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       if( pNode-&gt;jnFlags &amp; JNODE_RAW ){</span>
+<span class="s1">         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:179714:5: note: here</span>
+<span class="s1">     case JSON_REAL:</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘jsonReturn’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:179822:7: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       int_as_real: /* fall through to real */;</span>
+<span class="s1">       ^~~~~~~~~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:179824:5: note: here</span>
+<span class="s1">     case JSON_REAL: {</span>
+<span class="s1">     ^~~~</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c: In function ‘jsonEachColumn’:</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:181466:9: warning: this statement may fall through [-Wimplicit-fallthrough=]</span>
+<span class="s1">       if( p-&gt;bRecursive ){</span>
+<span class="s1">         ^</span>
+<span class="s1">Release/obj/gen/sqlite3/sqlite3.c:181476:5: note: here</span>
+<span class="s1">     default: {</span>
+<span class="s1">     ^~~~~~~</span>
+<span class="s1">  AR(target) Release/obj.target/deps/sqlite3.a</span>
+<span class="s1">  COPY Release/sqlite3.a</span>
+<span class="s1">  CXX(target) Release/obj.target/better_sqlite3/src/better_sqlite3.o</span>
+<span class="s1">./src/objects/database.lzz: In static member function ‘static void Database::JS_new(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp;)’:</span>
+<span class="s1">./src/objects/database.lzz:161:21: warning: variable ‘status’ set but not used [-Wunused-but-set-variable]</span>
+<span class="s1">  SOLINK_MODULE(target) Release/obj.target/better_sqlite3.node</span>
+<span class="s1">  COPY Release/better_sqlite3.node</span>
+<span class="s1">  CC(target) Release/obj.target/test_extension/deps/test_extension.o</span>
+<span class="s1">  SOLINK_MODULE(target) Release/obj.target/test_extension.node</span>
+<span class="s1">  COPY Release/test_extension.node</span>
+<span class="s1">  COPY ../build/better_sqlite3.node</span>
+<span class="s1">  COPY ../build/test_extension.node</span>
+<span class="s1">  TOUCH Release/obj.target/place_resulting_binaries.stamp</span>
+<span class="s1">rm b857c92884e9598d609f6be182a2595df7a8e00f.intermediate</span>
+<span class="s1">make: Leaving directory &#39;</span>/mnt/d/cubby/js/better-sqlite-study/node_modules/better-sqlite3/build<span class="err">&#39;</span>
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN my-study@0.0.1 No repository field.
+npm WARN my-study@0.0.1 No license field.
+
++ better-sqlite3@5.4.2
+added <span class="m">2</span> packages from <span class="m">1</span> contributor and audited <span class="m">19</span> packages in <span class="m">75</span>.815s
+found <span class="m">0</span> vulnerabilities
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../linux-tips/" title="Linux Tips" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Linux Tips
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

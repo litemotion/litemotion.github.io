@@ -1,0 +1,2857 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en,ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/doc-icon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>IoT Server APIs - ZIOT Design</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#iot-server-apis" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="ZIOT Design" class="md-header-nav__button md-logo">
+          
+            <img src="../img/doc-icon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ZIOT Design
+            </span>
+            <span class="md-header-nav__topic">
+              
+                IoT Server APIs
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../basebox/" class="md-tabs__link">
+          Basebox
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../toolz/" class="md-tabs__link">
+          Toolz
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../app-server-checklist/" class="md-tabs__link">
+          App Server
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-overview/" class="md-tabs__link">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../linux-tips/" class="md-tabs__link">
+          Other Resources
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="ZIOT Design" class="md-nav__button md-logo">
+      
+        <img src="../img/doc-icon.png" width="48" height="48">
+      
+    </a>
+    ZIOT Design
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../guide/" title="Guide" class="md-nav__link">
+      Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Basebox
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Basebox
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basebox/" title="What is Basebox" class="md-nav__link">
+      What is Basebox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-machines-supported/" title="Machines Supported" class="md-nav__link">
+      Machines Supported
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Toolz
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Toolz
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz/" title="What is Toolz" class="md-nav__link">
+      What is Toolz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-get-started/" title="Get Started w Toolz" class="md-nav__link">
+      Get Started w Toolz
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      App Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        App Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../app-server-checklist/" title="Checklist" class="md-nav__link">
+      Checklist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-overview/" title="API Overview" class="md-nav__link">
+      API Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Other Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Other Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-tips/" title="Linux Tips" class="md-nav__link">
+      Linux Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simon-tips/" title="Simon's Tip" class="md-nav__link">
+      Simon's Tip
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    Databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admindb" class="md-nav__link">
+    admin.db
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logins" class="md-nav__link">
+    logins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orgs" class="md-nav__link">
+    orgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orgs_logins" class="md-nav__link">
+    orgs_logins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    restrictions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datadb" class="md-nav__link">
+    data.db
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-devices" class="md-nav__link">
+    table devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-handlers" class="md-nav__link">
+    table handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-hello" class="md-nav__link">
+    table hello
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-machines" class="md-nav__link">
+    table machines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-operations" class="md-nav__link">
+    table operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-measures" class="md-nav__link">
+    table measures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-shifts" class="md-nav__link">
+    table shifts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-units_headers" class="md-nav__link">
+    table units_headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-units" class="md-nav__link">
+    table units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-v_current_shifts" class="md-nav__link">
+    view v_current_shifts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#di" class="md-nav__link">
+    DI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#di-details" class="md-nav__link">
+    DI Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reset-password" class="md-nav__link">
+    reset-password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-on" class="md-nav__link">
+    sign-on
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-in" class="md-nav__link">
+    sign-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-reset-password" class="md-nav__link">
+    verify-reset-password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#me" class="md-nav__link">
+    me
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-off" class="md-nav__link">
+    sign-off
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orgs_1" class="md-nav__link">
+    orgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-org-key" class="md-nav__link">
+    clear-org-key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-org-key" class="md-nav__link">
+    new-org-key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devices" class="md-nav__link">
+    devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logins_1" class="md-nav__link">
+    logins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machines" class="md-nav__link">
+    machines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shifts" class="md-nav__link">
+    shifts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#di-legacy-paths" class="md-nav__link">
+    DI Legacy Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-legacy-paths" class="md-nav__link">
+    MI Legacy Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi" class="md-nav__link">
+    MI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-json" class="md-nav__link">
+    MI JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-details" class="md-nav__link">
+    MI Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-vs-ws" class="md-nav__link">
+    HTTP vs WS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    auth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    counter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hello" class="md-nav__link">
+    hello
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure" class="md-nav__link">
+    measure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resend" class="md-nav__link">
+    resend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-broadcast" class="md-nav__link">
+    time broadcast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-request" class="md-nav__link">
+    time request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corebus" class="md-nav__link">
+    CoreBus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bus-event-naming" class="md-nav__link">
+    Bus Event Naming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-following-is-going-to-be-redesigned" class="md-nav__link">
+    The following is going to be redesigned.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-operations" class="md-nav__link">
+    General Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-start-up" class="md-nav__link">
+    Device start up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-of-the-database" class="md-nav__link">
+    Indexing of the database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miot" class="md-nav__link">
+    mIoT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-todo" class="md-nav__link">
+    Bugs &amp; Todo
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="iot-server-apis">IoT Server APIs</h1>
+<p>This document is to describe the design of iot server version 2. This is a big change to the whole design from database to interface (API).</p>
+<h2 id="databases">Databases</h2>
+<p>Version 2 design introduce the following databases changes:</p>
+<ol>
+<li>New admin.db to maintain the organization and logins information.</li>
+<li>Support more than one data.db (the old name is test.db).</li>
+<li>Redesign of the table schema.</li>
+</ol>
+<h2 id="naming-convention">Naming Convention</h2>
+<ol>
+<li>Table name is in norn plural form.</li>
+<li>Table name is in lower case and separated by underscore <code>_</code>.</li>
+<li>Field <code>_id</code> in a table is the unique identity key of the record in the table.</li>
+<li>Field <code>cwho</code> in a table is the id of creation login of the record.</li>
+<li>Field <code>cts</code> in a table is the timestamp (<code>js</code>) of creation of the record.</li>
+<li>Field <code>who</code> in a table is the id of modification login of creation of the record.</li>
+<li>Field <code>ts</code> in a table is the timestamp (<code>js</code>) of modification of the record.</li>
+<li>Field <code>sdate</code> in a table is the shift date (班次日期) of the record.</li>
+<li>If a field name is the same as a table name <code>x</code>, it is referencing to the <code>_id</code> of the table of <code>x</code>.</li>
+</ol>
+<h2 id="admindb">admin.db</h2>
+<h3 id="logins">logins</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>The internal id of the login record</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of login</td>
+<td><code>super</code></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>The user id or account code of the login</td>
+<td></td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>The encrypted user password</td>
+<td></td>
+</tr>
+<tr>
+<td>pwds</td>
+<td>Internal use</td>
+<td></td>
+</tr>
+<tr>
+<td>salt</td>
+<td>The salt of the user</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The natural name of user</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email of the user</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>The mobile of the user</td>
+<td></td>
+</tr>
+<tr>
+<td>tz</td>
+<td>The default timezone of the user.</td>
+<td>Default is 8.</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>The ts of the creation/change of the record</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the user</td>
+<td><code>newly-created</code>, <code>..</code></td>
+</tr>
+<tr>
+<td>reset_pwd_token</td>
+<td>The token of reset password request</td>
+<td></td>
+</tr>
+<tr>
+<td>reset_pwd_ts</td>
+<td>The ts of reset password token</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="orgs">orgs</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>The internal id of the org record</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the org</td>
+<td></td>
+</tr>
+<tr>
+<td>sn</td>
+<td>The short name of the org</td>
+<td></td>
+</tr>
+<tr>
+<td>tz</td>
+<td>The timezone of org. It's default value is the tz of owner</td>
+<td></td>
+</tr>
+<tr>
+<td>owner</td>
+<td>The owner of the org.</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of the org.</td>
+<td><code>personal</code>, <code>basic</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the org.</td>
+<td><code>newly-created</code>,<code>removed</code></td>
+</tr>
+<tr>
+<td>dataStore</td>
+<td>The name of the data store</td>
+<td>system internal assigned</td>
+</tr>
+<tr>
+<td>orgKey</td>
+<td>The orgKey of the org</td>
+<td></td>
+</tr>
+<tr>
+<td>orgKeyTs</td>
+<td>The ts of the generation/change of orgKey</td>
+<td></td>
+</tr>
+<tr>
+<td>ts</td>
+<td>the ts of the change of the record</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="orgs_logins">orgs_logins</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>The internal id of this record</td>
+<td></td>
+</tr>
+<tr>
+<td>orgs</td>
+<td>The id of the orgs</td>
+<td>ref to <code>orgs._id</code></td>
+</tr>
+<tr>
+<td>logins</td>
+<td>The id of the logins</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>roles</td>
+<td>The role of the login in the org</td>
+<td><code>owner</code>, <code>viewer</code></td>
+</tr>
+<tr>
+<td>who</td>
+<td>The id of the user who create/change this record</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of this relationship</td>
+<td><code>enable</code>,<code>disabled</code></td>
+</tr>
+<tr>
+<td>ts</td>
+<td>The ts of the record</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="restrictions">restrictions</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>The internal id of this record</td>
+<td></td>
+</tr>
+<tr>
+<td>orgs</td>
+<td>The id of the orgs</td>
+<td>ref to <code>orgs._id</code></td>
+</tr>
+<tr>
+<td>logins</td>
+<td>The id of the logins</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>role</td>
+<td>The role of the login have any restriction</td>
+<td></td>
+</tr>
+<tr>
+<td>rules</td>
+<td>A JSON data to control what data should be be restricted.</td>
+<td></td>
+</tr>
+<tr>
+<td>who</td>
+<td>The id of the user who create/change this record</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>ts</td>
+<td>The ts of the record</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="datadb">data.db</h2>
+<h3 id="table-devices">table devices</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>new</th>
+<th>old</th>
+<th>description</th>
+<th>change remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>ID</td>
+<td>The internal id of the device record</td>
+<td>Type change to CHAR.</td>
+</tr>
+<tr>
+<td>orgs</td>
+<td></td>
+<td>The id of org the device belongs to</td>
+<td>ref to <code>orgs._id</code></td>
+</tr>
+<tr>
+<td>physical_id</td>
+<td>device_id</td>
+<td>The chip id (nodemcu) or physical device id.</td>
+<td>It is read from device</td>
+</tr>
+<tr>
+<td>usage</td>
+<td>usage</td>
+<td>The usage description of the device</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td></td>
+<td>The device token</td>
+<td></td>
+</tr>
+<tr>
+<td>tokenTs</td>
+<td></td>
+<td>The timestamp of the creation of device token</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td></td>
+<td>Type of the device</td>
+<td><code>virtual-device</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td>Status of the device</td>
+<td><code>enabled</code> , <code>disabled</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td>The description of the device</td>
+<td></td>
+</tr>
+<tr>
+<td>max_machine</td>
+<td>max_machine</td>
+<td>The max number of machine can be assigned to the device.</td>
+<td></td>
+</tr>
+<tr>
+<td>who</td>
+<td></td>
+<td>The id of user who create/change this record</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td>ts</td>
+<td></td>
+<td>The ts of the record</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="table-handlers">table handlers</h3>
+<p><em>Since 2019-09-06</em></p>
+<p>This is to define the <em>event data handler</em>.</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>new</th>
+<th>old</th>
+<th>description</th>
+<th>change remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orgs</code></td>
+<td></td>
+<td>The id of org the handler belongs to</td>
+<td>ref to <code>orgs._id</code></td>
+</tr>
+<tr>
+<td><code>_id</code></td>
+<td></td>
+<td>The internal id of the handler record</td>
+<td></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td></td>
+<td>The code of the handler. <code>code</code> = <code>counter</code> is reserved.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td></td>
+<td>The name of the handler.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>process_type</code></td>
+<td></td>
+<td>The process type the handler. Process Type let system know how to process (logic) the <em>event data</em> received. <code>counter</code>,<code>on</code>,<code>off</code> are its valid value.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>remark</code></td>
+<td></td>
+<td>Any user remarks.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>who</code></td>
+<td></td>
+<td>The id of login who change the record</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td><code>ts</code></td>
+<td></td>
+<td>The ts of the record changed</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cwho</code></td>
+<td></td>
+<td>The id of login who create the record</td>
+<td>ref to <code>logins._id</code></td>
+</tr>
+<tr>
+<td><code>cts</code></td>
+<td></td>
+<td>The ts of the record created</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="table-hello">table hello</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|orgs| | The id of org the device belongs to | ref to <code>orgs._id</code> |
+|server_ts|server_ts|The server ts of the record|
+|devices |device_id | The device internal id| Type change to CHAR.|
+|op_ip|op_id| The ip of the device |
+|op_ts|op_ts| The ts of the hello message | Unix epoch |
+|message|message| The hello message(information) containing the device id, circuit type, start reason etc.|
+|machines| machine_id| The internal id of the machine the device is assigned.| ref to <code>machines._id</code>|</p>
+</blockquote>
+<h3 id="table-machines">table machines</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|orgs| | The id of org the machine belongs to | ref to <code>orgs._id</code> |
+|_id| ID | The internal id of the machine record | Type change to CHAR|
+|code| code| The code of the machine for daily usage or reference to its id in other system.
+|name| name| The name of tha machine|
+|type | type| The type of the machine|
+|class| class| The class of the machine. A class is a group of machines.|
+|spec| spec| The spec description of the machine.|
+|status|status| The current scheduled (planned) status of the machine|<code>schedule_on</code>, <code>schedule_off</code>, <code>schedule_maint</code>,<code>disabled</code>|
+|location|location | The location description where the machine is located. It can be a Map name. |
+|bound| | The bound data (x,y,w,h) of the machine in a map if the <code>location</code> is a map name. |
+|cum_count|cum_count| The cumulative count of the machine |
+|wo|wo| The current work order (production order, mo etc) the machine is working for.| This is a work status info|
+|product|product| The current product (part etc) the machine is working for.| This is a work status info|
+|mold|mold| The mold (or assistant tools) the machine is equipped. | This is a work status info|
+|target| target |The current target of cycle time of the machine| This is a work status info|
+|who|  | The id of login who change the record | ref to <code>logins._id</code>
+|ts| | The ts of the record |</p>
+</blockquote>
+<h3 id="table-operations">table operations</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|orgs| | The id of org the record belongs to | ref to <code>orgs._id</code> |
+|server_ts|server_ts| The server ts of the record |
+|devices| device_id| The device which emits this record | Type change to CHAR|
+|op_ts| op_ts | The ts of the record from device 
+|op_ip| op_ip | The ip of the device |
+|op_type|op_type| The type of the event|
+|cycle_tm|cycle_tm| The cycle time of the record. It is the time difference form the next record of the same org, same device, the same type |
+|machines|machine_id| The id of the machine of the device |
+|machines_wo| machine_wo | The copied value of wo of the machine of the device| ref to <code>machines.wo</code>|
+|machines_product| machine_product | The copied value of product of the machine of the device| ref to <code>machines.product</code>|
+|machines_mold| machine_mold | The copied value of mold of the machine of the device| ref to <code>machines.mold</code>|
+|machines_target| machine_target | The copied value of target of the machine of the device| ref to <code>machines.target</code>|</p>
+</blockquote>
+<h3 id="table-measures">table measures</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|orgs| | The id of org the record belongs to | ref to <code>orgs._id</code> |
+|server_ts|server_ts| The server ts of the record |
+|devices| device_id| The device which emits this record | Type change to CHAR|
+|op_ts| op_ts | The ts of the record from device 
+|op_ip| op_ip | The ip of the device |
+|op_type|op_type| The type of the event|
+|cycle_tm|cycle_tm| The cycle time of the record. It is the time difference form the next record of the same org, same device, the same type |
+|machines|machine_id| The id of the machine of the device |
+|machines_wo| machine_wo | The copied value of wo of the machine of the device| ref to <code>machines.wo</code>|
+|machines_product| machine_product | The copied value of product of the machine of the device| ref to <code>machines.product</code>|
+|machines_mold| machine_mold | The copied value of mold of the machine of the device| ref to <code>machines.mold</code>|
+|machines_target| machine_target | The copied value of target of the machine of the device| ref to <code>machines.target</code>|
+|measure_x | | The x data of measure.|
+|measure_y | | The y data of measure.|
+|measure_z | | The z data of measure.|
+|measure_d1 | | The d1 data of measure.|
+|measure_d2 | | The d2 data of measure.|
+|measure_d3 | | The d3 data of measure.|
+|measure_c1 | | The c1 data of measure.|
+|measure_c2 | | The c2 data of measure.|
+|measure_c3 | | The c3 data of measure.|</p>
+</blockquote>
+<h3 id="table-shifts">table shifts</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|_id| | The internal id of the shift|
+|orgs| | The id of org the shifts belongs to | ref to <code>orgs._id</code> |
+|class|class| The class of the shifts belongs to | |
+|code |code | The code the shift. It can be reference to a short code or id from other system.|
+|name |name | The name of the shift |
+|effective_from | effective_from | The start date of the the shift (inclusive)|
+|effective_till | effective_till | The till date of the the shift (inclusive)|
+|tz| timezone | The timezone value of the shift. It should be copied from the tz value of the organization. |
+|start|start | The start time string of the shift in 24 hours format <code>HH:MM</code>.|
+|hr| length_hr| The number of hours of the shift. It can be decimal (e.g. 4.5). using start and hr to determine the shift end time|</p>
+</blockquote>
+<h3 id="table-units_headers">table units_headers</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|_id| | |The internal id of this units header|
+|name | |The name of the header |
+|who| | The id of user create / change the record |
+|ts | | The ts of this record |</p>
+</blockquote>
+<h3 id="table-units">table units</h3>
+<blockquote>
+<p>|new|old|description| change remark|
+|--|--|
+|_id| ID |The internal id of this record| Type change to CHAR
+|headers| |The id of unit header | ref to <code>units_headers._id</code>|
+|machines| machine_id | The id of the machine attached | ref to <code>machines._id</code>|
+|devices| device_id  | The id of the device attached | ref to <code>devices._id</code> |
+|status| | The status of the record | <code>enabled</code>, <code>disabled</code>|</p>
+</blockquote>
+<h3 id="view-v_current_shifts">view v_current_shifts</h3>
+<h2 id="interfaces">Interfaces</h2>
+<p>This document is to describe the design of iot server machine interface version 2.</p>
+<p>The big change of this version of the api is to</p>
+<ol>
+<li>introduce version label in the api  </li>
+<li>support both HTTP / Websocket protocols</li>
+<li>support multiple organization in one server</li>
+<li>introduce authentication of DI.</li>
+</ol>
+<p>As the previous version, there are still 3 major types of interfaces interacted with users and devices.</p>
+<ol>
+<li><code>MI</code> - machine interface</li>
+<li><code>DI</code> - data interface</li>
+<li><code>UI</code> - user interface</li>
+</ol>
+<h2 id="di">DI</h2>
+<p>Most of the data communication between client and server is via Data Interface (DI).</p>
+<p><strong>Protocol</strong></p>
+<p><code>DI</code> is working under HTTP protocol.</p>
+<p><strong>General Endpoint</strong></p>
+<p>The general endpoint is <code>http://:org-endpoint/</code> suffixed by additional <strong>DI path</strong> of specific DI functions.</p>
+<p><strong>General Response</strong></p>
+<p>The general format of response of DI is <code>{error, data}</code>. If there is an error, there is an <code>error</code> value, otherwise the <code>error</code> is null or empty. If there is any data return, <code>data</code> may be array or object. It is implemented centrally in <code>ctxReturn</code> in <code>core-bus.js</code> in this version.</p>
+<p><strong>DI Paths</strong></p>
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>DI path</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/</code></td>
+<td>The api endpoint of the version 1 (protected api)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./pdata/v1/</code></td>
+<td>The api endpoint of the version 1 (public api)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./pdata/v1/reset-password</code></td>
+<td>submit to reset-password process</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./pdata/v1/sing-on</code></td>
+<td>submit to sign-on process</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./pdata/v1/sing-in</code></td>
+<td>submit to sign-in process</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./pdata/v1/verify-reset-password</code></td>
+<td>submit to verify the reset-password token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/me</code></td>
+<td>return the signed-in user info</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/me</code></td>
+<td>submit to change the signed-in user info</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/me/change-password</code></td>
+<td>submit to change the signed-in user password</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/me/orgs</code></td>
+<td>return the list of orgs the user is able to access</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/me/sign-off</code></td>
+<td>submit to sign-off process</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs</code></td>
+<td>return the list of orgs the user is able to access</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id</code></td>
+<td>return the org data of the <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id</code></td>
+<td>submit to change the org data of the <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/clear-org-key</code></td>
+<td>submit to clear the orgKey of the org</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/new-org-key</code></td>
+<td>submit to generate a new orgKey of the org</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/devices</code></td>
+<td>return the list of devices of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/devices</code></td>
+<td>submit to register a new devices of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/devices/:device_id</code></td>
+<td>return data of the device <code>:device_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/devices/:device_id</code></td>
+<td>submit to change the data of device <code>:device_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/devices/:device_id/new-token</code></td>
+<td>submit to create new token of device <code>:device_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/logins</code></td>
+<td>return the list of logins of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/logins</code></td>
+<td>submit to create a new member login of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/machines</code></td>
+<td>return the list of machines of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/machines</code></td>
+<td>submit to add a new machine of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/machines/:machine_id</code></td>
+<td>return the data of machine <code>:machine_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/machines/:machine_id</code></td>
+<td>submit to change the data of machine <code>:machine_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/machines/:machine_id/work-status</code></td>
+<td>submit to change the work status data of machine <code>:machine_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/shifts</code></td>
+<td>return the list of shifts of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/units</code></td>
+<td>return the list of all units of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/units/:unit_id</code></td>
+<td>return the unit record of <code>:unit_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/units</code></td>
+<td>submit to create a new unit record of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>./data/v1/orgs/:org_id/units/:unit_id</code></td>
+<td>submit to remove the new unit record <code>:unit_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/units/of/device/:device_id</code></td>
+<td>return a list of units associated with the device <code>:device_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/units/of/device/:device_id/machine/:machine_id</code></td>
+<td>submit to associate device <code>:device_id</code> with machine <code>:machine_id</code> of org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/units/of/devices/:device_id/:device2_id</code></td>
+<td>submit to associate two devices <code>:device_id</code> and <code>:device2_id</code> of org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/units/of/machine/:machine_id</code></td>
+<td>return a list of units associated with the machine <code>:machine_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/units/of/machine/:machine_id/device/:device_id</code></td>
+<td>submit to associate device <code>:device_id</code> with machine <code>:machine_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>./data/v1/orgs/:org_id/units/of/machines/:machine_id/:machine2_id</code></td>
+<td>submit to associate two machines <code>:machine_id</code> and <code>:machine2_id</code> of the org <code>:org_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/_/t/:table</code></td>
+<td>generic selection api for a single table/view</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>./data/v1/orgs/:org_id/_/t/:table/:id</code></td>
+<td>generic selection api for a single table/view</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>./data/v1/orgs/:org_id/_/q</code></td>
+<td>generic sql runner api (only for development)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="di-details">DI Details</h2>
+<h3 id="reset-password">reset-password</h3>
+<blockquote>
+<p><code>POST</code> <code>./pdata/v1/reset-password</code>.  body: <code>{email}</code></p>
+<p>This DI only supports reset by providing the login email.<br />
+This DI will trigger back-end process to generate a <strong>reset-password-token</strong> and submit an email to the <code>email</code>.</p>
+</blockquote>
+<h3 id="sign-on">sign-on</h3>
+<blockquote>
+<p><code>POST</code> <code>./pdata/v1/sign-on</code>. body: <code>{ name, pwds, email, mobile, uid}</code></p>
+<p>This DI will submit request to server to create a new login.<br />
+<code>name</code>, <code>pwds</code>, <code>email</code> are mandatory. <code>mobile</code> and <code>uid</code> are optional. If no <code>uid</code>, <code>email</code> will be the <code>uid</code>.<br />
+If the process success, it will return the <code>me</code> object of the sign-on user. But it will NOT automatically sign in.<br />
+sing-on process will also create personal org in back-end.</p>
+</blockquote>
+<h3 id="sign-in">sign-in</h3>
+<blockquote>
+<p><code>POST</code> <code>./pdata/v1/sign-in</code>. body: <code>{ uid, pwds }</code></p>
+<p>This DI will submit request to server to sign in.<br />
+If the process success, it will return the <code>{data:{ok:true}}</code> object. Otherwise it returns <code>{error:"&lt;error&gt;"}</code> object.</p>
+</blockquote>
+<h3 id="verify-reset-password">verify-reset-password</h3>
+<blockquote>
+<p><code>POST</code> <code>./pdata/v1/verify-reset-password</code>. body: <code>{email, reset_pwd_token}</code></p>
+<p>This DI is to verify the reset-password-token by providing the login email.<br />
+If the process success, it will return the <code>{data:{ok:true}}</code> object.</p>
+</blockquote>
+<h3 id="me">me</h3>
+<blockquote>
+<p><code>GET</code> <code>./data/v1/me</code>.</p>
+<p>This DI is to get the signed-in user info. No params is required.</p>
+<p><code>POST</code> <code>./data/v1/me</code>.  body: <code>{name, mobile, tz}</code></p>
+<p>This DI is to update the signed-in user info.<br />
+All the params are optional. If <code>pwds</code> is changed, back-end will send an email to notify the email owner. If <code>email</code> changed, back-end will send an email to notify the original email address owner.</p>
+<p><code>POST</code> <code>./data/v1/me/change-password</code>. body : <code>{pwdo, pwds}</code></p>
+<p>This DI is to change the password of the signed-in user.<br />
+If the process success, it will return <code>{data:{ok:true}}</code>.</p>
+<p><code>GET</code> <code>./data/v1/me/orgs</code></p>
+<p>This DI is to get the list of orgs which the signed-in user is able access. No params is required.<br />
+The each record in the list of orgs has a field <code>roles</code> to indicate the role of the signed-in user of the org.</p>
+</blockquote>
+<h3 id="sign-off">sign-off</h3>
+<blockquote>
+<p><code>POST</code> <code>./data/v1/me/sign-off</code>.</p>
+<p>This DI is to submit to process a sign-off process. No params is required.<br />
+After process, the server will response <code>{data:{ok:true}}</code> object.</p>
+</blockquote>
+<h3 id="orgs_1">orgs</h3>
+<blockquote>
+<p><code>GET</code> <code>./data/v1/orgs</code>.</p>
+<p>This DI is to get the list of orgs which the signed-in user is able access. No params is required.<br />
+Same as <code>./data/v1/me/orgs</code>.</p>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id</code>.</p>
+<p>This DI is to get the data of a specific org of <code>:org_id</code></p>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id</code>.  Body: <code>{name,sn,tz}</code></p>
+<p>This DI is to submit a change of the data of the org <code>:org_id</code>.</p>
+</blockquote>
+<h3 id="clear-org-key">clear-org-key</h3>
+<blockquote>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/clear-org-key</code>.</p>
+<p>This DI is to submit to clear the orgKey of the org <code>:org_id</code></p>
+</blockquote>
+<h3 id="new-org-key">new-org-key</h3>
+<blockquote>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/new-org-key</code>.</p>
+<p>This DI is to generate a new orgKey of the org <code>:org_id</code></p>
+</blockquote>
+<h3 id="devices">devices</h3>
+<blockquote>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/devices</code>.</p>
+<p>This DI is to get the list of all devices of the org <code>:org_id</code>.<br />
+This DI supports <strong>filter query</strong>.
+</p>
+<p><code>PUT</code> <code>./data/v1/orgs/:org_id/devices</code>. Body: <code>{ physical_id, usage, type, description, max_machine }</code></p>
+<p>This DI is to submit to register a new device of the org <code>:org_id</code>.<br />
+<code>physical_id</code> is mandatory. others are optional. <code>type</code> will be '' if it is not 'virtual-device'. <code>max_machine</code> is default to 1.<br />
+If process is success it will return a device data object with at least the assigned <code>_id</code> and <code>token</code> fields.<br />
+The register program has to write the <code>_id</code> and <code>token</code> back to the device, otherwise the device may not be able to connect to the server.</p>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/devices/:device_id</code>.</p>
+<p>This DI is to get the data of the device <code>:device_id</code> of the org <code>:org_id</code>.<br />
+No <code>token</code> of devices will be shown in this DI. </p>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/devices/:device_id</code>.  Body: <code>{ usage , status, description, max_machine, type}</code></p>
+<p>This DI is to submit to change the data of device <code>:device_id</code> of org <code>:org_id</code>.<br />
+It will return new device object if success.</p>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/devices/:device_id/new-token</code>. </p>
+<p>This DI is to submit to create a new device token of device <code>:device_id</code>. 
+This DI will then return the object: <code>{ _id, token ,tokeTs}</code>.<br />
+The register program has to write the newly created <code>token</code> back to the device.
+</p>
+</blockquote>
+<h3 id="logins_1">logins</h3>
+<blockquote>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/logins</code>.</p>
+<p>This DI is to get the list of the logins of the org <code>:org_id</code>.</p>
+<p><code>PUT</code> <code>./data/v1/orgs/:org_id/logins</code>. Body: <code>{uid, pwds, name, email, mobile,roles}</code>.</p>
+<p>This DI is to submit to create a new member login of org.<br />
+The member created with this DI is a <strong>member</strong> login of the org.<br />
+<code>uid</code> , <code>pwds</code> and <code>roles</code> are mandatory. Others are optional. </p>
+</blockquote>
+<h3 id="machines">machines</h3>
+<blockquote>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/machines</code>.</p>
+<p>This DI is to get the list of machines of the org <code>:org_id</code>.<br />
+This DI supports <strong>filter query</strong>.</p>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/machines/:machine_id</code>.  </p>
+<p>This DI is to get the data of the machine <code>:machine_id</code> of org <code>:org_id</code></p>
+<p><code>PUT</code> <code>./data/v1/orgs/:org_id/machines</code>. Body: <code>{ code, name, class, spec, status, type, location, bound, cum_count, wo, product, mold, target }</code>.</p>
+<p>This DI is to submit to register a new machine of the org <code>:org_id</code>.</p>
+<p>If process is success it will return a machine data object with the assigned <code>_id</code> field.</p>
+</blockquote>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/machines/:machine_id</code>.</p>
+<blockquote>
+<p>This DI is to submit to change the machine <code>:machine_id</code> of the org <code>:org_id</code>. The Post body is:
+<code>js
+{ code, name, class, spec, status, type, location, bound, cum_count, wo, product, mold, target }</code></p>
+<p>If process is success it will return a machine data object.</p>
+</blockquote>
+<p><code>POST</code> <code>./data/v1/orgs/:org_id/machines/:machine_id/work-status</code>.</p>
+<blockquote>
+<p>This DI is to submit to change the work status data of device <code>:device_id</code>. The Post body is:
+<code>js
+{ wo, product, mold, target , status}</code>
+All params are optional.
+This DI will then return the object <code>{ok:true}</code> if success.
+</p>
+</blockquote>
+<h3 id="shifts">shifts</h3>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/shifts</code>.</p>
+<blockquote>
+<p>This DI is to get the list of shifts data of orgs <code>:org_id</code>.</p>
+</blockquote>
+<p><code>GET</code> <code>./data/v1/orgs/:org_id/shifts/:shift_id</code>.</p>
+<blockquote>
+<p>This DI is to get the data of the shift <code>:shift_id</code> of the org <code>:org_id</code>.
+</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2 id="di-legacy-paths">DI Legacy Paths</h2>
+<p>There are some legacy paths used in Web User Interface (WUI or simply UI)</p>
+<table>
+<thead>
+<tr>
+<th>legacy path</th>
+<th>location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/data/machines-current-shift-status/injection</code></td>
+<td><code>components/Dashboard.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_q</code></td>
+<td><code>components/DatabaseDebugger.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?</code></td>
+<td><code>components/DayOperations.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?</code></td>
+<td><code>components/DaySummary.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/devices?where=device_id=</code></td>
+<td><code>components/DeviceBasic.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?where=</code></td>
+<td><code>/components/HelloAnalysis.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_hello?where=device_id</code></td>
+<td><code>/components/HelloAnalysis.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_hello?where=op_type='hello' and</code></td>
+<td><code>/components/LastHello.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?</code></td>
+<td><code>/components/LastOperations.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/machines?where=id=${this.id}</code></td>
+<td><code>/compoents/MachineBasic.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/machines</code></td>
+<td><code>/components/MachineOperations.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/operations?where=machine_id=</code></td>
+<td><code>/components/MachineOperations.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?where=</code></td>
+<td><code>/components/MachinesStops.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/machines?where=id=${this.id}</code></td>
+<td><code>/components/MachineWorkStatus.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/v_operations?where=</code></td>
+<td><code>/components/Projection.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/oprerations</code></td>
+<td><code>/views/Debugger.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/devices</code></td>
+<td><code>/views/Devices.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/units</code></td>
+<td><code>/views/Devices.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/machines</code></td>
+<td><code>/views/Machines.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/units</code></td>
+<td><code>/views/Machines.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/machines</code></td>
+<td><code>/views/MachinesReport.vue</code></td>
+</tr>
+<tr>
+<td><code>/data/_t/units</code></td>
+<td><code>/views/MachinesReport.vue</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mi-legacy-paths">MI Legacy Paths</h2>
+<table>
+<thead>
+<tr>
+<th>legacy path</th>
+<th>location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"http://"..SERVER_DOMAIN.."/time"</code></td>
+<td>wifi.lua <code>getServerTime()</code></td>
+</tr>
+<tr>
+<td><code>http://"..SERVER_DOMAIN.."/record/1/"..DEVICE_ID.."/"..ip.."/"..sec</code></td>
+<td>wifi.lua <code>sendRecord()</code></td>
+</tr>
+<tr>
+<td><code>"http://"..SERVER_DOMAIN.."/record/0/"..DEVICE_ID.."/"..ip.."/"..sec.."/"..m</code></td>
+<td>wifi.lua <code>sendHello()</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>&nbsp;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="mi">MI</h2>
+<p>Devices are using the <code>MI</code> to communicate with the IoT Server.  <code>MI</code> version 1 (v1) provides interfaces with HTTP and WebSocket (WS) protocol.</p>
+<p><strong>Prerequisite</strong>:</p>
+<ul>
+<li>The Device must be registered in an Organization already before calling the <code>MI</code>.</li>
+<li>The Device must be enabled before calling the <code>MI</code>.</li>
+<li>The Organization of the Device must be set to allow collecting data from the <code>MI</code>.</li>
+</ul>
+<p><strong>General MI</strong></p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>(Method)</th>
+<th>General Format of API Endpoints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP</td>
+<td>GET</td>
+<td><code>http://:org-endpoint/mi/v1/:orgKey/ ...</code></td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>POST</td>
+<td><code>http://:org-endpoint/mi/v1/:orgKey</code></td>
+</tr>
+<tr>
+<td>WS</td>
+<td></td>
+<td><code>ws://:org-endpoint/ws/v1/:orgKey/ ...</code></td>
+</tr>
+</tbody>
+</table>
+<p>Where</p>
+<ul>
+<li><code>:org-endpoint</code> is the server endpoint of the a user or organization. It is assigned by IoT Server internally.</li>
+<li><code>:orgKey</code> Each organization can be assigned a unique key at a time. The Organization can re-generate <code>:orgKey</code> at any time. The change of <code>:orgKey</code> of an Org results that all devices of the Org is to be re-registered.</li>
+</ul>
+<h2 id="mi-json">MI JSON</h2>
+<p>MI JSON format message contains the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>attribute name</th>
+<th>symbol</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td><code>:action</code></td>
+<td>define action type of the JSON message.</td>
+</tr>
+<tr>
+<td>action descriptor</td>
+<td><code>:descriptor</code></td>
+<td>further descriptor for the action.</td>
+</tr>
+<tr>
+<td>data content</td>
+<td><code>:data-content</code></td>
+<td>the content body of the data field.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;:action&quot;</span><span class="o">:</span><span class="s2">&quot;:descriptor&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="s2">&quot;:data-content&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>Action</strong></p>
+<table>
+<thead>
+<tr>
+<th><code>:action</code></th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>req</code></td>
+<td>Request action. It requests something defined by the action descriptor.</td>
+</tr>
+<tr>
+<td><code>res</code></td>
+<td>Response action. It response the corresponding request action.</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>Event submission action. It submits an event defined by the action descriptor.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>descriptor</th>
+<th>originator</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>req</code>/<code>res</code></td>
+<td><code>auth</code></td>
+<td>server</td>
+<td></td>
+</tr>
+<tr>
+<td><code>req</code>/<code>res</code></td>
+<td><code>time</code></td>
+<td>device</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>counter</code></td>
+<td>device</td>
+<td>submit the <em>event data</em>. There are many different type of event data. The type is defined the data content.</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>bulk-counter</code></td>
+<td>device</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>message</code></td>
+<td>device</td>
+<td>just print the message to console.</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>hello</code></td>
+<td>device</td>
+<td>save the hello message in server.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mi-details">MI Details</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Protocol</th>
+<th>Originator</th>
+<th>Playload example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth req</td>
+<td>ws</td>
+<td>Server</td>
+<td><pre>{req:"auth",data:{...}}</pre></td>
+<td>Server requests Device to provide authentication info.</td>
+</tr>
+<tr>
+<td>auth res</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{res:"auth",data:{...}}</pre></td>
+<td>Devices response to provide auth info.</td>
+</tr>
+<tr>
+<td>counter event</td>
+<td>get</td>
+<td>Device</td>
+<td><pre>./counter/:type/:device_id/:ts/:ip</pre></td>
+<td>Device emit this event to record counter with timestamp</td>
+</tr>
+<tr>
+<td>measure event</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{event:"event",data:{...}}</pre></td>
+<td>Device emit this event to record measures with timestamp</td>
+</tr>
+<tr>
+<td>counter event</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{event:"counter",data:{...}}</pre></td>
+<td>Device emit this event to record counter with timestamp</td>
+</tr>
+<tr>
+<td>hello event</td>
+<td>get</td>
+<td>Device</td>
+<td><pre>./hello/:device_id/:ts/:ip/:message</pre></td>
+<td>Devices emits this event when reboot/restart.</td>
+</tr>
+<tr>
+<td>hello event</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{event:"hello",data:{...}}</pre></td>
+<td>Devices emits this event when reboot/restart.</td>
+</tr>
+<tr>
+<td>resend req</td>
+<td>post</td>
+<td>Device</td>
+<td><pre>./resend</pre><pre>{data:[...]}</pre></td>
+<td>Device re-sends all unsent events</td>
+</tr>
+<tr>
+<td>resend req</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{req:"resend",data:[...]}</pre></td>
+<td>Device re-sends all unsent events</td>
+</tr>
+<tr>
+<td>resend res</td>
+<td>ws</td>
+<td>Server</td>
+<td><pre>{res:"resend",data:{...}}</pre></td>
+<td>Server notifies Device the result of resend.</td>
+</tr>
+<tr>
+<td>time event</td>
+<td>ws</td>
+<td>Server</td>
+<td><pre>{event:"time",data:{...}}</pre></td>
+<td>Server broadcasts server to time to all connected devices</td>
+</tr>
+<tr>
+<td>time req</td>
+<td>get</td>
+<td>Device</td>
+<td><pre>./time/</pre></td>
+<td>Device requests server time</td>
+</tr>
+<tr>
+<td>time req</td>
+<td>ws</td>
+<td>Device</td>
+<td><pre>{req:"time"}</pre></td>
+<td>Device requests server time</td>
+</tr>
+<tr>
+<td>time res</td>
+<td>ws</td>
+<td>Server</td>
+<td><pre>{res:"time",data:{...}}</pre></td>
+<td>Server responses the time request</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-vs-ws">HTTP vs WS</h3>
+<p>The following table summarizes the difference.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>HTTP</th>
+<th>WS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>counter</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>hello</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>measure</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>resend</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>time request</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>time broadcast</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>remote device config</td>
+<td></td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<h3 id="auth">auth</h3>
+<blockquote>
+<p><code>WS</code> only.</p>
+<p>Server sends <strong>auth request</strong> message as the following format:</p>
+<p><code>js
+{
+  "req":"auth",
+  "data":{
+    "otp":"&lt;one-time-password&gt;"
+  }
+}</code></p>
+<p>After receiving the <code>{"req":"auth"}</code> from server, the device needs to emit <strong>auth response</strong> message to server. Otherwise the ws connection will be closed by the server. The format of the <strong>auth response</strong> message is:</p>
+<p><code>js
+{
+  "res":"auth",
+  "data":{
+    "id":"&lt;device-id&gt;",
+    "token":"&lt;session-token&gt;"
+  }
+}</code></p>
+<p>The <code>session-token</code> = sessionToken(device_token, data.otp)</p>
+</blockquote>
+<h3 id="counter">counter</h3>
+<blockquote>
+<p><code>HTTP</code> <code>WS</code>.</p>
+<p>Device emits counter event to the server to record an occurrence and the timestamp of a specify type of a counter event.</p>
+<blockquote>
+<p><strong>HTTP</strong>: The HTTP path of the event is of the foramt:</p>
+<p><code>js
+GET http://:org-endpoint/mi/v1/:orgKey/counter/:type/:device_id/:ts/:ip</code></p>
+<p>The path will return a plain text <code>ok</code> if the request is done.</p>
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<p><strong>WS</strong>: The format of the event message is:
+<code>js
+{
+  "event":"counter",
+  "data":{
+    "device_id": 123456,        // device internal id registered in the server
+    "type":"&lt;counter-type&gt;",    // operation type (injection)
+    "ts":1509890989,            // operation timestamp in unix epoch
+    "ip":"192.168.0.101"        // device ip
+  }
+}</code></p>
+</blockquote>
+</blockquote>
+<h3 id="hello">hello</h3>
+<blockquote>
+<p><code>HTTP</code> <code>WS</code>.</p>
+<p>Device will emit hello event message to the server if the device restart/reboot.</p>
+<blockquote>
+<p><strong>HTTP</strong>: The HTTP path of the event is of the foramt:</p>
+<p><code>js
+GET http://:org-endpint/mi/v1/:orgKeey/hello/:device_id/:ts/:ip/:message</code></p>
+<p>Note that the <code>:message</code> in this HTTP path should be Base64 formatted.</p>
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<p><strong>WS</strong>: The format of the event message is:
+<code>js
+{
+  "event":"hello",
+  "data":{
+    "device_id":123456,
+    "ts":1509890989,      // operation timestamp in unix epoch
+    "ip":"192.168.0.101"  // device ip
+    "message":"&lt;hello-information&gt;" // plain text string
+  }
+}</code></p>
+<p>Note that the <code>:message</code> should be in plain text.</p>
+</blockquote>
+</blockquote>
+<h3 id="measure">measure</h3>
+<blockquote>
+<p><code>WS</code> only.</p>
+<p>Device emits measure event to the server to record an measured data and the timestamp of a specify type of a measure event.</p>
+<blockquote>
+<p><strong>WS</strong>: The format of the event message is:
+<code>js
+{
+  "event":"measure",
+  "data":{
+    "device_id": 123456,        // device internal id registered in the server
+    "type":"acceleration",    // operation type (injection)
+    "ts":1509890989,            // operation timestamp in unix epoch
+    "ip":"192.168.0.101"        // device ip
+    "measure_x":4,
+    "measure_y":21,
+    "measure_z":200,
+  }
+}</code></p>
+</blockquote>
+</blockquote>
+<h3 id="resend">resend</h3>
+<blockquote>
+<p><code>HTTP</code> <code>WS</code>.</p>
+<blockquote>
+<p><strong>HTTP</strong>: Post the <strong>resend</strong> data to the path:
+<code>js
+POST http://:org-endpoint/mi/v1/:orgKey/resend</code></p>
+<p>The format of data body of the POST request is:
+<code>js
+{
+  data:[ &lt;array-of-event-message&gt;]
+}
+<div class="highlight"><pre><span></span> An example of the `array-of-event-message`:
+</pre></div>
+[
+  {
+    "event":"counter",  
+    "data":{
+      "device_id":123456,   // device physical id
+      "type":"arm",         // operation type (robot arm)
+      "ts":1509890989,      // operation timestamp in unix epoch
+      "ip":"192.168.0.101"  // device ip
+    }
+  },{
+    "event":"counter",  
+    "data":{
+      "device_id":123456,   // device physical id
+      "type":"arm",         // operation type (robot arm)
+      "ts":1509891990,      // operation timestamp in unix epoch
+      "ip":"192.168.0.101"  // device ip
+    }
+  }
+]</code>
+When <strong>resend request</strong> is processed, the server will response a plain text <code>ok</code>.</p>
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<p><strong>WS</strong>: The format of the <strong>resend request</strong> message is:</p>
+<p><code>js
+{ 
+  "req":"resend",
+  "data":[&lt;array-of-event-message&gt;]
+}</code>
+<code>array-of-event-message</code> is the same as those in HTTP POST.</p>
+<p>After processing the resend request, the server will send <strong>resend response</strong> message to the device to notify the result. the response format is:</p>
+<p><code>js
+{
+  "res":"resend",
+  "data":{
+    "ok":true
+  }
+}</code></p>
+</blockquote>
+</blockquote>
+<h3 id="time-broadcast">time broadcast</h3>
+<blockquote>
+<p><code>WS</code> only.</p>
+<p>Server may send the server time to all connected devices. the time event message is as the following format:</p>
+<p><code>js
+{
+  "event":"time",
+  "data":{
+    "ts":&lt;time&gt;
+  }
+}</code></p>
+</blockquote>
+<h3 id="time-request">time request</h3>
+<blockquote>
+<p><code>HTTP</code> <code>WS</code>.</p>
+<p>The device may request server time for time adjustment regularly. </p>
+<p>Note that the time value returned by this time request is in UNIX epoch.</p>
+<blockquote>
+<p><strong>HTTP</strong>:</p>
+<p><code>js
+GET http://:org-endpoint/mi/v1/:orgKey/time</code>
+The response of this path is the the time value in plaintext.</p>
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<p><strong>WS</strong>: The <strong>time request</strong> message format is:</p>
+<p><code>js
+{
+  "req":"time"
+}</code></p>
+<p>The server will send a <strong>time response</strong> message to the Device. The format is:
+<code>js
+{
+  "res":"time",
+  "data":{
+    "ts":&lt;time&gt;
+  }
+}</code></p>
+</blockquote>
+</blockquote>
+<h2 id="corebus">CoreBus</h2>
+<p>coreBus module provides three main methods:</p>
+<p><code>coreBus.on(eventName, coreBusHandler)</code> where <code>coreBusHandler</code> has the signature <code>(data, ctx, cb)</code></p>
+<p><code>coreBus.emit(eventName, data, ctx, cb)</code></p>
+<p><code>ctxReturn(error, data, ctx, cb)</code></p>
+<h2 id="bus-event-naming">Bus Event Naming</h2>
+<p>Machine Interface, no matter it is via HTTP or WS, will reach the mi-* coreBus events.</p>
+<h2 id="the-following-is-going-to-be-redesigned">The following is going to be redesigned.</h2>
+<p><code>CoreEventBus</code> (EventEmitter) has the following setting:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;injection&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;database&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;handler&quot;</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">sql</span> <span class="o">=</span> <span class="sb">`INSERT INTO operations (server_ts, device_id, op_ip, op_ts, op_type) VALUES(?,?,?,?,?)`</span><span class="p">;</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">serverTs</span><span class="p">,</span> <span class="nx">chipId</span><span class="p">,</span> <span class="nx">ip</span><span class="p">,</span> <span class="nx">ts</span><span class="p">,</span> <span class="nx">op_type</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;err on /record/0/..&#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+        <span class="nx">CoreEventBus</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;post-injection&#39;</span><span class="p">,{</span><span class="nx">error</span><span class="o">:</span><span class="nx">err</span><span class="p">});</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`A row has been inserted with rowid </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastID</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+      <span class="nx">dbUpdateOperationsByRowId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">lastID</span><span class="p">);</span>
+      <span class="nx">CoreEventBus</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;post-injection&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="general-operations">General Operations</h2>
+<ul>
+<li>Devices have to be registered in IoT Server before any communication.</li>
+<li>Devices registration must be performed by a user account.</li>
+<li>In Device Registration, a device is assigned to one Work Unit (machine or production line etc.) and one or more events to submit to the server.</li>
+</ul>
+<h2 id="device-start-up">Device start up</h2>
+<ul>
+<li>Device starts</li>
+<li>Program loaded start to work recording events</li>
+<li>If network is working, response server auth request.</li>
+<li>If network is working and auth responded, if unsent messages exists then submit resend request</li>
+<li>If network is working and auth responded, send directly events to server</li>
+<li>Connecting to Wifi or internet</li>
+</ul>
+<h2 id="indexing-of-the-database">Indexing of the database</h2>
+<p>I find indexing need with where clause analysis.</p>
+<p>lib\util.js
+  - function createSelectSQL 
+    - any table <code>_id</code>
+    - any table <code>orgs</code></p>
+<p>lib\wss.js
+  - function sql_selectOrgsByOrgKey
+    - <code>select * from orgs where orgKey = ?</code>
+  - wss
+    - <code>select * from devices where _id=? and token=?</code></p>
+<p>.\routers\data-classes.js
+  - coreBus.on('data-orgs-classes',(data,ctx,cb)=&gt;{
+    - let sql = <code>select * from classes where orgs=?</code> </p>
+<p>./routers/data-devices.js
+  - router.param('device_id',function(req,res,next,val){
+    - let sql = <code>select * from devices where _id=?</code>
+  - coreBus.on('data-orgs-device-update',(data,ctx)=&gt;{
+    - let sql = <code>update devices set type=?, usage=?, description=?, max_machine=?, status=?, who=?,ts=? where _id = ?</code>
+  - coreBus.on('data-orgs-device-new-token',(data,ctx)=&gt;{
+    - let sql = <code>update devices set token = ?, tokenTs = ? where _id = ?</code></p>
+<p>./routers/data-logins.js
+  - const sql_selectLoginsByUid = admin.prepare(
+    - <code>select * from logins where uid=?</code></p>
+<p>./routers/data-machines.js
+  - router.param('device_id',function(req,res,next,val){
+    - let sql = <code>select * from devices where _id=?</code>
+  - coreBus.on('data-orgs-machines-current-status',(data,ctx,cb)=&gt;{
+    - where op_ts &gt; strftime('%s','now') - ${s5m} -- within 5min
+    - where op_ts &gt; strftime('%s','now') - ${s1h} -- within 1hr 
+  - coreBus.on('data-orgs-machine-update',(data,ctx)=&gt;{
+      - let sql = <code>update machines set
+      - code =?, name =?, class =?, spec =?, status =?, type =?, location =?, bound =?, cum_count=?, wo=?, product=?, mold=?, target=?, who=?, ts=? where _id = ?</code>
+  - coreBus.on('data-orgs-machine-work-status-update',(data,ctx)=&gt;{
+    - let sql = <code>update machines set wo=?, product=?, mold=?, target=?, status=?, who=?, ts=? where _id=?</code></p>
+<p>./routers/data-me.js
+  - coreBus.on('data-me-update',(data,ctx)=&gt;{
+    - let sql = 'update logins set name=?, mobile=?, tz=?, who=?, ts=? where _id=?'
+  - coreBus.on('data-me-change-password',(data,ctx)=&gt;{
+    - let sql = <code>update logins set pwd=?, who=?, ts=? where _id = ?</code>
+  - coreBus.on('data-me-orgs',(data,ctx)=&gt;{
+    - let sql = <code>select a.*, b.roles from orgs a inner join orgs_logins b on a._id = b.orgs where b.logins =? ;</code></p>
+<p>./routers/data-orgs.js
+  - coreBus.on('data-org-update',(data,ctx)=&gt;{
+    - let sql = <code>update orgs set name=?, sn=?, tz=?, who=?, ts=? where _id=?</code>
+    - const sql_updateOrgsOrgKeyById  = admin.prepare(
+      - <code>update orgs set orgKey = ?, orgKeyTs = ? where _id=?</code></p>
+<p>./routers/data-units.js
+  - router.param('device_id',function(req,res,next,val){
+    - let sql = <code>select * from devices where _id=?</code>
+  - router.param('machine_id',(req,res,next,val)=&gt;{
+    - let sql = <code>select * from machines where _id = ?</code>
+  - coreBus.on('data-orgs-unit',(data,ctx)=&gt;{
+    - let sql = <code>select * from units where _id=? and orgs=?</code>
+  - coreBus.on('data-orgs-units-of-device',(data,ctx,cb)=&gt;{
+    - let sql = <code>select uu.* , m.class, d.physical_id,m.wo, m.product,m.target,m.mold,m.code as machine$code ,m.type as machine$type
+  from units u
+  left join units uu on u.headers = uu.headers
+  left join machines m on uu.machines = m._id 
+  left join devices d on uu.devices = d._id 
+  where u.devices = ? and u.orgs=?</code>
+  - coreBus.on('data-orgs-units-of-machine',(data,ctx,cb)=&gt;{
+    - let sql = <code>select uu.* , m.class, d.physical_id
+  from units u
+  left join units uu on u.headers = uu.headers
+  left join machines m on uu.machines = m._id 
+  left join devices d on uu.devices = d._id 
+  where u.machines = ? and u.orgs=?</code>
+  - coreBus.emit('data-orgs-units-of-machine',{id:data.machine},ctx,(er,unit1)=&gt;{
+    - let sql2 = <code>update units set devices = ?, op_type=? where _id = ?</code>
+    - let sql = <code>update units set headers=? where headers=?</code></p>
+<p>./routers/mi.js
+  - coreBus.on('db-update-operations-by-row-id',(data,ctx,cb)=&gt;{
+    - let sql = <code>select * from v_operations where rowId=?</code>
+  - coreBus.on('db-update-operations-by-row-id',(data,ctx,cb)=&gt;{
+    - let sql2 = <code>select * from (
+    select 'prev' [rowType], rowId, * from operations 
+    where orgs = ? and op_ts &lt; ? and devices=? and op_type=?
+    order by op_ts desc limit 1
+    ) union 
+    select * from ( 
+    select 'next' [rowType], rowId, * from operations 
+    where orgs = ? and op_ts &gt; ? and devices=? and op_type=?
+    order by op_ts limit 1
+    )</code>;
+    - updatePrevSQL = <code>update operations set cycle_tm = ${thisRow.op_ts - prevRow.op_ts} where rowId=${prevRow.rowId}</code>
+    - updateThisSQL = <code>update operations set ${setThisClause} where rowId=${data.rowId}</code>
+  - coreBus.on('db-update-measures-by-row-id',(data,ctx,cb)=&gt;{
+    - let sql = <code>select mm.* from measures m
+  inner join units u on m.orgs = u.orgs and m.devices = u.devices and m.op_type = u.op_type
+  left join machines mm on u.orgs = mm.orgs and u.machines = mm._id
+  where m.rowId = ?</code>
+  - function patchMachineInformation(rowId,tableName,fieldName,ctx){
+    - let sql2 = <code>update ${tableName} set ${fieldName}='${machine_id}' where ROWID = ${rowId}</code>;
+  - const sql_selectOrgsByOrgKey = admin.prepare(
+    - <code>select * from orgs where orgKey = ?</code></p>
+<p>./routers/pdata.js
+  - coreBus.on('reset-password',(data,ctx,cb)=&gt;{
+  - let sql = <code>update logins set reset_pwd_token = ?,reset_pwd_ts = ? where _id = ?</code>
+  - sql_selectLoginsByUid = admin.prepare(
+    - <code>select * from logins where uid=?</code>,
+  - let sql_selectLoginsByEmail = admin.prepare(
+    - <code>select * from logins where email=?</code> )</p>
+<h2 id="miot">mIoT</h2>
+<p>This is about mobile app api design. The mIoT is mainly a on-site tool to work with QR Code labels sticked on devices, machines or location etc. The users don't need to go back to web portal on PCs to do some recording activities.</p>
+<p>System should be able to manage the following activities:</p>
+<ul>
+<li>The number of mIoT mobiles connecting to the Server.</li>
+<li>The number of operators using the mIoT.</li>
+</ul>
+<p>Design:</p>
+<ul>
+<li>mIoT can be used solely by a registered user of IoT.</li>
+<li>mIoT can be used for operators of a specific org.</li>
+<li>mIoT has a setup registration record in the App.</li>
+</ul>
+<p>mIoT for a registered user of IoT Server:</p>
+<ul>
+<li>the mIoT impersonates as the user</li>
+</ul>
+<p>mIoT for operators of an org:</p>
+<ul>
+<li>the mIoT is registered under an org, as an asset of the org.</li>
+<li>the operation in the mIoT requires the operator to provide password to perform.</li>
+</ul>
+<p>Table design:</p>
+<ul>
+<li>Table: data.mobiles to keep the register mobile devices installed mIoT (fields "orgs" or "logins" to )</li>
+<li>Table: data.operators to keep the operators list of an org.</li>
+</ul>
+<p>Registration data:</p>
+<div class="highlight"><pre><span></span><span class="nx">config</span><span class="o">:</span><span class="p">{</span>
+  <span class="nx">_id</span><span class="o">:</span>
+  <span class="nx">token</span><span class="o">:</span>
+  <span class="nx">endpoint</span><span class="o">:</span>
+  <span class="nx">protocol</span><span class="o">:</span>
+  <span class="nx">ts</span><span class="o">:</span>
+<span class="p">}</span>
+<span class="nx">user</span><span class="o">:</span><span class="nx">logins</span><span class="p">.</span><span class="nx">_id</span>
+<span class="nx">userSetting</span><span class="o">:</span> <span class="nx">btoa</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
+</pre></div>
+
+<p>DI API:</p>
+<p>/sign-in-miot/ {device_id,}</p>
+<h2 id="bugs-todo">Bugs &amp; Todo</h2>
+<p>The bugs are found here:</p>
+<ul>
+<li>Prepared Select statement return cached old result even after update of the data. Eg. <code>sql_selectLoginsByUid</code>.</li>
+</ul>
+<p>Todo are here:</p>
+<ul>
+<li>Indexing the database to improve the performance.</li>
+<li>Moving of operation and measure records to some kind of log table.</li>
+<li>Provide user interface for creating/editing machines, assignment of device to machines, work status of Machine.</li>
+<li>Review the dashboard styling based on Samson's comment.</li>
+<li>Complete the TOOLv1</li>
+<li>OTA update of LFS library of devices.</li>
+<li>3-Axis Algorithm to count the action of robot-arm.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

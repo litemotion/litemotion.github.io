@@ -1,0 +1,63 @@
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Litemotion</title>
+<meta name="theme-color" content="#ef5350">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<script type="text/javascript">
+(function(){
+  var locales = ['en','zh-tw'] //['en','zh-TW','zh-CN']
+  var url = window.location.href.substr(0,window.location.href.lastIndexOf("/"))
+  // first use localStorage first
+  if(localStorage) {
+    if(localStorage['locale']) {
+      var i= locales.indexOf(localStorage['locale'])
+      if(i>0) {
+        url = url + "/" + locales[i]
+        //console.log('lang:',url)
+        document.location = url
+        return;
+      }
+    }
+  }
+  // use navigator.language|languages
+  var i = locales.indexOf(navigator.language)
+  if(i>=0) {
+    url = url + "/" + locales[i]
+    console.log('language:',url)
+    document.location = url
+    //document.location = url
+    return;
+  } 
+  var langs = navigator.languages||[]
+  for(var j=0;j<langs.length;j++){
+    i = locales.indexOf(langs[j])
+    if(i>=0){
+      url = url + "/" + locales[i]
+      console.log('languages:',url)
+      document.location = url
+      return;
+    }
+  }
+  
+  // fallback to en anyway
+  if((langs.indexOf('zh-HK')>0)||(langs.indexOf('zh-CN')>0)||(langs.indexOf('zh')>0)) {
+    url = url + '/zh-tw'
+  } else {
+    url = url + "/en"
+  }
+  console.log('fallback:',url)
+  document.location = url
+  return;
+  
+})();
+</script>
+</head>
+<body style="background:#ddd"></body>
+</html>  
