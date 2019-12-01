@@ -14,6 +14,12 @@ body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code
 (function(){
   var locales = ['en','zh-tw'] //['en','zh-TW','zh-CN']
   var url = window.location.href.substr(0,window.location.href.lastIndexOf("/"))
+  
+  // hardcode to temp 'zh-tw'
+  document.location = url+'/zh-tw'
+  return;
+  // end of hardcode
+  
   // first use localStorage first
   if(localStorage) {
     if(localStorage['locale']) {

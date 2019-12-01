@@ -3,7 +3,7 @@
 
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh-Hant" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -13,23 +13,23 @@
       
       
       
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+        <meta name="lang:clipboard.copy" content="複製">
       
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+        <meta name="lang:clipboard.copied" content="已複製">
       
-        <meta name="lang:search.language" content="en,ja">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
         <meta name="lang:search.pipeline.trimmer" content="True">
       
-        <meta name="lang:search.result.none" content="No matching documents">
+        <meta name="lang:search.result.none" content="沒有符合的項目">
       
-        <meta name="lang:search.result.one" content="1 matching document">
+        <meta name="lang:search.result.one" content="找到 1 個符合的項目">
       
-        <meta name="lang:search.result.other" content="# matching documents">
+        <meta name="lang:search.result.other" content="找到 # 個符合的項目">
       
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
+        <meta name="lang:search.tokenizer" content="[a-z0-9\-\s\.]+">
       
       <link rel="shortcut icon" href="../img/doc-icon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
@@ -84,7 +84,7 @@
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#api-flow" tabindex="1" class="md-skip">
-        Skip to content
+        跳轉到
       </a>
     
     
@@ -123,7 +123,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -133,7 +133,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="result">
           <div class="md-search-result__meta">
-            Type to start searching
+            打字進行搜尋
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -163,15 +163,11 @@
   <li class="md-tabs__item">
     
       <a href=".." class="md-tabs__link md-tabs__link--active">
-        Overview
+        概觀
       </a>
     
   </li>
 
-      
-        
-      
-        
       
         
   
@@ -179,7 +175,7 @@
     <li class="md-tabs__item">
       
         <a href="../basebox/" class="md-tabs__link">
-          Basebox
+          基盒
         </a>
       
     </li>
@@ -204,8 +200,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="../app-server-checklist/" class="md-tabs__link">
-          App Server
+        <a href="../dummy.md" class="md-tabs__link">
+          Web UI
         </a>
       
     </li>
@@ -230,7 +226,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../linux-tips/" class="md-tabs__link">
+        <a href="../documentation/" class="md-tabs__link">
           Other Resources
         </a>
       
@@ -267,8 +263,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Overview" class="md-nav__link">
-      Overview
+    <a href=".." title="概觀" class="md-nav__link">
+      概觀
     </a>
   </li>
 
@@ -278,10 +274,58 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      基盒
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        基盒
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../documentation/" title="Documentation" class="md-nav__link">
-      Documentation
+    <a href="../basebox/" title="什麼是基盒" class="md-nav__link">
+      什麼是基盒
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-machines-supported/" title="支援的機器" class="md-nav__link">
+      支援的機器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-machines-supported/" title="如何註冊基盒" class="md-nav__link">
+      如何註冊基盒
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -290,10 +334,154 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Toolz
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Toolz
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../guide/" title="Guide" class="md-nav__link">
-      Guide
+    <a href="../toolz/" title="什麼是 Toolz" class="md-nav__link">
+      什麼是 Toolz
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-get-started/" title="開始使用 Toolz" class="md-nav__link">
+      開始使用 Toolz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
+      配置 Toolz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      快速使用指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        快速使用指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-quick-wifi-setting/" title="設定 WiFi" class="md-nav__link">
+      設定 WiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-quick-wifi-installer/" title="自定義的 WiFi 安裝包" class="md-nav__link">
+      自定義的 WiFi 安裝包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-update/" title="更新 tool.exe" class="md-nav__link">
+      更新 tool.exe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Basebox 相關參考
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Basebox 相關參考
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-auto-mode/" title="自動執行模式" class="md-nav__link">
+      自動執行模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -307,11 +495,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Basebox
+      Web UI
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Basebox
+        Web UI
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -322,20 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../basebox/" title="What is Basebox" class="md-nav__link">
-      What is Basebox
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bb-machines-supported/" title="Machines Supported" class="md-nav__link">
-      Machines Supported
+    <a href="../dummy.md" title="Help" class="md-nav__link">
+      Help
     </a>
   </li>
 
@@ -355,94 +531,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Toolz
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Toolz
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../toolz/" title="What is Toolz" class="md-nav__link">
-      What is Toolz
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../toolz-get-started/" title="Get Started w Toolz" class="md-nav__link">
-      Get Started w Toolz
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      App Server
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        App Server
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../app-server-checklist/" title="Checklist" class="md-nav__link">
-      Checklist
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-5">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -472,17 +564,41 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-6">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-6">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/" title="Guide" class="md-nav__link">
+      Guide
+    </a>
+  </li>
+
         
           
           
@@ -502,8 +618,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../simon-tips/" title="Simon's Tip" class="md-nav__link">
-      Simon's Tip
+    <a href="../app-server-checklist/" title="ZIOT Server Checklist" class="md-nav__link">
+      ZIOT Server Checklist
     </a>
   </li>
 
@@ -530,7 +646,7 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">本頁目錄</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -605,19 +721,19 @@
 <td>1</td>
 <td></td>
 <td>↓</td>
-<td>Device prepares programs: <code>no_resend.lua</code>, <code>fix_store_add.lua</code>, <code>wifi_conn.lua</code></td>
+<td>Device prepares programs: <code class="codehilite"><span class="n">no_resend</span><span class="p">.</span><span class="n">lua</span></code>, <code class="codehilite"><span class="n">fix_store_add</span><span class="p">.</span><span class="n">lua</span></code>, <code class="codehilite"><span class="n">wifi_conn</span><span class="p">.</span><span class="n">lua</span></code></td>
 </tr>
 <tr>
 <td>2</td>
 <td></td>
 <td>↓</td>
-<td>Device execute <code>network.setupMonitor()</code></td>
+<td>Device execute <code class="codehilite"><span class="n">network</span><span class="p">.</span><span class="n">setupMonitor</span><span class="p">()</span></code></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>Go to the Flow: <code>Device connecting to network</code></td>
+<td>Go to the Flow: <code class="codehilite"><span class="n">Device</span> <span class="n">connecting</span> <span class="k">to</span> <span class="n">network</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -642,43 +758,43 @@
 <td>1</td>
 <td>WIFI router checking the credential.</td>
 <td>←</td>
-<td>Device try to auto connect the <code>WIFI</code>.</td>
+<td>Device try to auto connect the <code class="codehilite"><span class="n">WIFI</span></code>.</td>
 </tr>
 <tr>
 <td>2</td>
 <td>WIFI router accept the connection and assign an IP</td>
 <td>→</td>
-<td>Device gets IP assigned and trigger event <code>wifimon.STA_GOT_IP</code>.</td>
+<td>Device gets IP assigned and trigger event <code class="codehilite"><span class="n">wifimon</span><span class="p">.</span><span class="n">STA_GOT_IP</span></code>.</td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>On the event: <code>network.WIFI_CONNECTED = true</code></td>
+<td>On the event: <code class="codehilite"><span class="n">network</span><span class="p">.</span><span class="n">WIFI_CONNECTED</span> <span class="o">=</span> <span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>On the event: Device resolves the endpoint URL by calling <code>network.resolveEndpoint()</code></td>
+<td>On the event: Device resolves the endpoint URL by calling <code class="codehilite"><span class="n">network</span><span class="p">.</span><span class="n">resolveEndpoint</span><span class="p">()</span></code></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>On the event: create websocket instance by calling <code>network.createWS()</code></td>
+<td>On the event: create websocket instance by calling <code class="codehilite"><span class="n">network</span><span class="p">.</span><span class="n">createWS</span><span class="p">()</span></code></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>On the event: try to obtains server time by calling <code>network.httpReqTime()</code></td>
+<td>On the event: try to obtains server time by calling <code class="codehilite"><span class="n">network</span><span class="p">.</span><span class="n">httpReqTime</span><span class="p">()</span></code></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td>On the event: try to establish the socket connection with server. Go to Flow: <code>Device Socket connection</code></td>
+<td>On the event: try to establish the socket connection with server. Go to Flow: <code class="codehilite"><span class="n">Device</span> <span class="n">Socket</span> <span class="k">connection</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -701,13 +817,13 @@
 </tr>
 <tr>
 <td>1</td>
-<td>Server receives <code>connection</code> event.</td>
+<td>Server receives <code class="codehilite"><span class="k">connection</span></code> event.</td>
 <td>←</td>
-<td>Device submits a <code>connection</code> event to server.</td>
+<td>Device submits a <code class="codehilite"><span class="k">connection</span></code> event to server.</td>
 </tr>
 <tr>
 <td>1</td>
-<td>Server verifies the endpoint URL (<code>admin.sql.getOrgsByOrgKey</code>).<br> If error occurs, close the socket client connection by calling <code>ws.close()</code>. <code>ws.close()</code> will not immediately close the connection, it may have about 3s delay.</td>
+<td>Server verifies the endpoint URL (<code class="codehilite"><span class="k">admin</span><span class="p">.</span><span class="k">sql</span><span class="p">.</span><span class="n">getOrgsByOrgKey</span></code>).<br> If error occurs, close the socket client connection by calling <code class="codehilite"><span class="n">ws</span><span class="p">.</span><span class="k">close</span><span class="p">()</span></code>. <code class="codehilite"><span class="n">ws</span><span class="p">.</span><span class="k">close</span><span class="p">()</span></code> will not immediately close the connection, it may have about 3s delay.</td>
 <td></td>
 <td></td>
 </tr>
@@ -755,8 +871,6 @@
           <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
-          
-            
               
                 <script src="../assets/javascripts/lunr/tinyseg.js"></script>
               
@@ -765,8 +879,6 @@
               
             
           
-          
-            <script src="../assets/javascripts/lunr/lunr.multi.js"></script>
           
         
       
