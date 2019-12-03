@@ -65,6 +65,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-153698386-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -191,19 +216,6 @@
       
         <a href="./" class="md-tabs__link md-tabs__link--active">
           Toolz
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../dummy.md" class="md-tabs__link">
-          Web UI
         </a>
       
     </li>
@@ -433,27 +445,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
-      配置 Toolz
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-3">
       快速使用指南
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-3">
         快速使用指南
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -507,13 +507,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
     
-    <label class="md-nav__link" for="nav-3-5">
+    <label class="md-nav__link" for="nav-3-4">
       Basebox 相關參考
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+      <label class="md-nav__title" for="nav-3-4">
         Basebox 相關參考
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -536,38 +536,14 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Web UI
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Web UI
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../dummy.md" title="Help" class="md-nav__link">
-      Help
+    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
+      配置 Toolz
     </a>
   </li>
 
@@ -584,13 +560,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -620,13 +596,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -744,8 +720,8 @@
                 
                 
                 <h1 id="toolz">Toolz</h1>
-<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">19</span></code></p>
-<p><code class="codehilite"><span class="n">toolz</span></code> 是一個支援 ZIOT 項目的小工具，作用是提供一個統一的工具來開發，測試，安裝及設定項目中使用的 Basebox 程式。 <code class="codehilite"><span class="n">toolz</span></code> 是一個以文字字串為主的命令列介面互動式的執行環境，執行上類似 Telnet。</p>
+<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span></code></p>
+<p>toolz 是一個支援 ZIOT 項目的小工具，作用是提供一個統一的工具來開發，測試，安裝及設定項目中使用的 Basebox 程式。 toolz 是一個以文字字串為主的命令列介面互動式的執行環境，執行上類似 Telnet。</p>
 <div class="codehilite"><pre><span></span>   <span class="nv">________</span>  <span class="nv">_____</span>  <span class="nv">_____</span>     <span class="nv">___</span> <span class="nv">_______</span>                   
   <span class="o">/</span><span class="nv">__</span>    <span class="nv">__</span><span class="o">//</span>  <span class="nv">_</span>  \<span class="o">/</span>  <span class="nv">_</span>  \   <span class="o">/</span>  <span class="o">//</span><span class="nv">___</span>   <span class="o">/</span>                   
      <span class="o">|</span>  <span class="o">|</span>   <span class="o">|</span> <span class="o">|</span> <span class="o">|</span> <span class="o">||</span> <span class="o">|</span> <span class="o">|</span> <span class="o">|</span>  <span class="o">/</span>  <span class="o">/</span>    <span class="o">/</span>  <span class="o">/</span>                    
@@ -753,8 +729,8 @@
      <span class="o">|</span><span class="nv">__</span><span class="o">|</span>   \<span class="nv">_____</span><span class="o">/</span>\<span class="nv">_____</span><span class="o">//</span><span class="nv">_____</span><span class="o">/</span> <span class="o">/</span><span class="nv">______</span><span class="o">/</span>    <span class="nv">Tool</span> <span class="k">for</span> <span class="nv">ZIOT</span> 
 </pre></div>
 
-<h2 id="toolz_1">我能使用 <code class="codehilite"><span class="n">toolz</span></code> 做什麼</h2>
-<p>你可以用 <code class="codehilite"><span class="n">toolz</span></code> 對 Basebox 完成下列工作</p>
+<h2 id="toolz_1">我能使用 toolz 做什麼</h2>
+<p>你可以用 toolz 對 Basebox 完成下列工作</p>
 <ul>
 <li>安裝程式</li>
 <li>設定 WiFi 連線</li>
@@ -763,25 +739,25 @@
 <li>執行你的腳本代碼</li>
 </ul>
 <h2 id="_1">安裝</h2>
-<p><code class="codehilite"><span class="n">toolz</span></code> 基本上是一個不用安裝的程式。但它執行的電腦上要先預備好 <strong>PowerShell</strong> ，<strong>USB Driver</strong> 和 與你電腦匹配的 <strong>micro USB 數據線</strong> 。目前只有在 Windows 10 測試過<code class="codehilite"><span class="n">toolz</span></code> ，建議你也在 Windows 10 上執行。</p>
+<p>toolz 基本上是一個不用安裝的程式。但它執行的電腦上要先預備好 PowerShell ，USB Driver 和 與你電腦匹配的 micro USB 數據線 。目前只有在 Windows 10 測試過toolz ，建議你也在 Windows 10 上執行。</p>
 <details class="info"><summary>安裝前提 - PowerShell</summary><ul>
-<li>PowerShell: <code class="codehilite"><span class="n">toolz</span></code> 是以 <code class="codehilite"><span class="n">PowerShell</span></code> 開發的。對 <code class="codehilite"><span class="n">PowerShell</span></code> 版本要求在 5.1 或以上。</li>
-<li>可以執行代碼 <code class="codehilite"><span class="n">powershell</span> <span class="err">$</span><span class="n">PSVersionTable</span><span class="p">.</span><span class="n">PSVersion</span></code> 檢查<code class="codehilite"><span class="n">PowerShell</span></code> 版本。</li>
+<li>PowerShell: toolz 是以 PowerShell 開發的。對 PowerShell 版本要求在 5.1 或以上。  </li>
+<li>可以執行代碼 <code class="codehilite"><span class="n">powershell</span> <span class="err">$</span><span class="n">PSVersionTable</span><span class="p">.</span><span class="n">PSVersion</span></code> 檢查 PowerShell 版本。</li>
 </ul>
 </details>
 <details class="info"><summary>安裝前提 - USB Driver</summary><ul>
-<li>USB Driver: <code class="codehilite"><span class="n">toolz</span></code> 與 MCU 的通訊大部是以 USB 進行，在 Windows 中我們使用 CH340 Windows Driver (驅動程式)。Winchihead (WCH) 江苏沁恒股份有限公司 負責 CH340 Driver 的維護。 參考此 <a href="http://www.wch.cn/download/CH341SER_ZIP.html">WCH 管方網址</a> 了解如何下載安裝。 或 參考 Thingpluse 網址的英文<a href="https://docs.thingpulse.com/how-tos/install-drivers/">參考文件</a>。</li>
-<li>成功安裝後，可把 Device 接上 USB 端口，再開啟 Windows Device Manager ，在 Ports 節點中會看到類似的內容。<br />
-<img alt="" src="../img/toolz-device-manager-usb-serial-port.png" /></li>
+<li>USB Driver: toolz 與 MCU 的通訊大部是以 USB 進行，在 Windows 中我們使用 CH340 Windows Driver (驅動程式)。Winchihead (WCH) 江苏沁恒股份有限公司 負責 CH340 Driver 的維護。 參考此 WCH <a href="http://www.wch.cn/download/CH341SER_ZIP.html">管方網址</a> 了解如何下載安裝。 或 參考 Thingpluse 網址的英文<a href="https://docs.thingpulse.com/how-tos/install-drivers/">參考文件</a>。</li>
+<li>成功安裝後，可把 Device 接上 USB 端口，再開啟 Windows Device Manager ，在 Ports 節點中會看到類似的內容。</li>
 </ul>
+<p><img alt="" src="../img/toolz-device-manager-usb-serial-port.png" /></p>
 </details>
 <details class="info"><summary>安裝前提 - micro USB 數據線</summary><ul>
-<li>目前 Basebox 的所有型號均使用 <code class="codehilite"><span class="n">micro</span> <span class="n">USB</span></code> 接口與電腦通訊。</li>
+<li>目前 Basebox 的所有型號均使用 micro USB 接口與電腦通訊。</li>
 <li>按照你電腦的數據傳輸接口來配置相符的數據線。</li>
 <li>注意部份 micro USB 線只是充電線，不能傳輸數據。</li>
 </ul>
 </details>
-<p>完成前提的檢查後，安裝 <code class="codehilite"><span class="n">toolz</span></code> 就只需把 <code class="codehilite"><span class="n">TOOLZ</span><span class="p">.</span><span class="n">zip</span></code> 檔解壓 (unzip) 後即完成。 如果你解壓到一個名為 <code class="codehilite"><span class="n">toolz</span></code> 的目錄 (也可以是其他名字)，打開 <code class="codehilite"><span class="n">toolz</span></code> 的目錄，會看到以下的目錄及檔案。</p>
+<p>完成前提的檢查後，安裝 toolz 就只需把 TOOLZ.zip 檔解壓 (unzip) 後即完成。 如果你解壓到一個名為 toolz 的目錄 (也可以是其他名字)，打開 toolz 的目錄，會看到以下的目錄及檔案。</p>
 <div class="codehilite"><pre><span></span><span class="n">toolz</span><span class="err">\</span>
   <span class="err">├</span> <span class="n">doc</span><span class="err">\</span>
   <span class="err">├</span> <span class="n">locales</span><span class="err">\</span>
@@ -799,21 +775,6 @@
 </details>
 <details class="note"><summary>支援自定義預設指令 (Preset Command)</summary><p><code class="codehilite"><span class="err">預設指令</span> <span class="p">(</span><span class="n">Preset</span> <span class="n">Command</span><span class="p">)</span></code> 與 <code class="codehilite"><span class="n">toolz</span></code> 的<code class="codehilite"><span class="err">命令</span></code>是不同的東西。<code class="codehilite"><span class="err">預設指令</span></code>的基本作用就是用簡單名稱來定義一些在 Basebox 上執行的小腳本。所以預設指令是在 usb 模組下運作。</p>
 </details>
-<p>類似於 REPL (Read-Eval-Print Loop)。 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://zh.wikipedia.org/wiki/%E8%AF%BB%E5%8F%96%EF%B9%A3%E6%B1%82%E5%80%BC%EF%B9%A3%E8%BE%93%E5%87%BA%E5%BE%AA%E7%8E%AF">Wiki 中文: 讀取﹣求值﹣輸出循環</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">Wiki 英文: Read–Eval–Print Loop</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://www.jianshu.com/p/864fd2633096">簡書文章: 常见编程语言对REPL支持情况小结</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
                 
                   
                 

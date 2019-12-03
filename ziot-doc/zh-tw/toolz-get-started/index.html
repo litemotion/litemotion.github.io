@@ -65,6 +65,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-153698386-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -191,19 +216,6 @@
       
         <a href="../toolz/" class="md-tabs__link md-tabs__link--active">
           Toolz
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../dummy.md" class="md-tabs__link">
-          Web UI
         </a>
       
     </li>
@@ -495,27 +507,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
-      配置 Toolz
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-3">
       快速使用指南
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-3">
         快速使用指南
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -569,13 +569,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
     
-    <label class="md-nav__link" for="nav-3-5">
+    <label class="md-nav__link" for="nav-3-4">
       Basebox 相關參考
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+      <label class="md-nav__title" for="nav-3-4">
         Basebox 相關參考
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -598,38 +598,14 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Web UI
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Web UI
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../dummy.md" title="Help" class="md-nav__link">
-      Help
+    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
+      配置 Toolz
     </a>
   </li>
 
@@ -646,13 +622,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -682,13 +658,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -868,19 +844,18 @@
                 
                 
                 <h1 id="_1">開始使用</h1>
-<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">20</span></code></p>
+<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span></code></p>
 <h2 id="toolexe">開啟 tool.exe</h2>
-<p>開啟 <code class="codehilite"><span class="n">toolz</span></code>，你可以用下列任何一個方式:</p>
+<p>開啟 toolz，你可以用下列任何一個方式:</p>
 <ol>
 <li>
 <p>在 File Explorer，雙擊 <code class="codehilite"><span class="n">tool</span><span class="p">.</span><span class="n">exe</span></code></p>
 <blockquote>
-<p><img alt="" src="../img/toolz-file-explorer-view-toolz.png" />
-</p>
+<p><img alt="" src="../img/toolz-file-explorer-view-toolz.png" /></p>
 </blockquote>
 </li>
 <li>
-<p>在 Command Prompt 中，在存放 <code class="codehilite"><span class="n">toolz</span></code> 目錄路徑下，輸入 <code class="codehilite"><span class="n">tool</span></code> 後回車。例如:</p>
+<p>在 Command Prompt 中，在存放 toolz 目錄路徑下，輸入 tool 後回車。例如:</p>
 <blockquote>
 <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">toolz</span><span class="o">&gt;</span> <span class="n">tool</span>
 </pre></div>
@@ -892,16 +867,16 @@
 <p><img alt="" src="../img/toolz-screen-section.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果出現問題，很大情況是安裝「前提」沒預備好，或是配置檔 <code class="codehilite"><span class="n">config</span><span class="p">.</span><span class="n">json</span></code>  出現問題。</p>
+<p>如果出現問題，很大情況是安裝「前提」沒預備好，或是配置檔 config.json 出現問題。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>開啟 <code class="codehilite"><span class="n">toolz</span></code>及一般執行時是<strong>不</strong>需要 <strong>micro USB 數據線</strong> 或 <strong>Basebox</strong>。<br />
+<p>開啟 toolz 及一般執行時是不需要 micro USB 數據線 或 Basebox。<br />
 只有當使用與 Basebox 通訊的相關的命令時，才需要接上數據線及 Basebox。</p>
 </div>
 <h2 id="_2">介面</h2>
 <h3 id="title-bar">Title bar</h3>
-<p><code class="codehilite"><span class="n">toolz</span></code> 程式的的<strong>標題欄</strong> (title bar) 會顯示當前用戶執行狀態訊息。狀態訊息會因設定，及當前工作而異。</p>
+<p>toolz 程式的的標題欄 (title bar) 會顯示當前用戶執行狀態訊息。狀態訊息會因設定，及當前工作而異。</p>
 <p>狀態訊息包括下列內容:</p>
 <table>
 <thead>
@@ -915,50 +890,50 @@
 <tr>
 <td><code class="codehilite"><span class="o">[</span><span class="n">lang</span><span class="o">]</span><span class="w"></span></code></td>
 <td>用戶選用的語言</td>
-<td><code class="codehilite"><span class="n">zh</span><span class="o">-</span><span class="n">TW</span></code>: 中文繁體;<code class="codehilite"><span class="n">zh</span><span class="o">-</span><span class="n">CN</span></code>: 中文簡體;<code class="codehilite"><span class="n">en</span><span class="o">-</span><span class="n">US</span></code>: 英文;</td>
+<td>zh-TW: 中文繁體;zh-CN: 中文簡體;en-US: 英文;</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="o">[</span><span class="n">profile</span><span class="o">]</span><span class="w"></span></code></td>
 <td>當前選用的服務器 profile 名稱。</td>
-<td>大多數用戶只有一個 Profile。</td>
+<td>大多數用戶只有一個 Profile</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="o">[</span><span class="n">login</span><span class="o">]</span><span class="w"></span></code></td>
 <td>當前登入 profile 的用戶身份。</td>
-<td>login 的值為空時，表示目前仍未登入。</td>
+<td><code class="codehilite"><span class="n">login</span></code> 的值為空時，表示目前仍未登入。</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="o">[</span><span class="n">org</span><span class="o">]</span><span class="w"></span></code></td>
 <td>當前登入 profile 中的那個組織的簡稱。</td>
-<td>org 的值為空時，表示目前仍未登入。</td>
+<td><code class="codehilite"><span class="n">org</span></code> 的值為空時，表示目前仍未登入。</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="o">[</span><span class="n">usb</span><span class="o">]</span><span class="w"></span></code></td>
 <td>當前已選用的 USB 端口。</td>
-<td>usb 的值為空時，表示目前仍未選用任何端口。</td>
+<td><code class="codehilite"><span class="n">usb</span></code> 的值為空時，表示目前仍未選用任何端口。</td>
 </tr>
 </tbody>
 </table>
 <h3 id="logo-bar">Logo bar</h3>
-<p>明顯地顯示 <code class="codehilite"><span class="n">toolz</span></code> 的標識。</p>
+<p>明顯地顯示 toolz 的標識。</p>
 <h3 id="welcome-message">Welcome message</h3>
-<p>歡迎詞 (Welcome message) 反映目前 <code class="codehilite"><span class="n">toolz</span></code> 的版本號。</p>
+<p>歡迎詞 (Welcome message) 反映目前 toolz 的版本號。</p>
 <h3 id="prompt">Prompt</h3>
 <p>提示行 讓用戶知道目前在哪個模組之下，以及讓用戶輸入命令。</p>
 <h2 id="_3">開始</h2>
-<p>在<code class="codehilite"><span class="n">toolz</span></code>中，如果不知有什麼可用<strong>命令</strong>，就只管輸入 <code class="codehilite"><span class="n">help</span></code>。</p>
-<details class="info"><summary>動畫: 輸入 <code class="codehilite"><span class="n">help</span></code></summary><p><img alt="" src="../img/help-command.gif" /></p>
+<p>在 toolz 中，如果不知有什麼可用命令，就只管輸入 help。</p>
+<details class="info"><summary>動畫: 輸入 help</summary><p><img alt="" src="../img/help-command.gif" /></p>
 </details>
 <h2 id="_4">離開</h2>
-<p>在<code class="codehilite"><span class="n">toolz</span></code>中，如果要離開，輸入命令 <code class="codehilite"><span class="n">quit</span></code>。系統會要求你再確定是否離開，確定請輸入 <code class="codehilite"><span class="n">y</span></code>，取消請輸入 <code class="codehilite"><span class="n">n</span></code>。</p>
-<details class="info"><summary>動畫: 輸入 <code class="codehilite"><span class="n">quit</span></code></summary><p><img alt="" src="../img/quit-command.gif" /></p>
+<p>在 toolz 中，如果要離開，輸入命令 quit。系統會要求你再確定是否離開，確定請輸入 y，取消請輸入 n。</p>
+<details class="info"><summary>動畫: 輸入 quit</summary><p><img alt="" src="../img/quit-command.gif" /></p>
 </details>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Windows 中，<code class="codehilite"><span class="n">ctrl</span><span class="o">+</span><span class="k">C</span></code> 可關閉當前程序。但不建議這樣作為正常的離開操作。</p>
 </div>
 <h2 id="_5">通用命令</h2>
-<p><code class="codehilite"><span class="n">toolz</span></code> 把不同的命令組織成不同的模組中。<strong>通用命令</strong> 是指在不同模組中均可用的命令。</p>
+<p>toolz 把不同的命令組織成不同的模組中。通用命令 是指在不同模組中均可用的命令。</p>
 <table>
 <thead>
 <tr>
@@ -981,12 +956,12 @@
 </tr>
 <tr>
 <td><code class="codehilite"><span class="n">quit</span></code></td>
-<td>離開 <code class="codehilite"><span class="n">toolz</span></code> 。</td>
+<td>離開 toolz 。</td>
 </tr>
 </tbody>
 </table>
 <h2 id="_6">模組</h2>
-<p><code class="codehilite"><span class="n">toolz</span></code> 把不同的命令組織成不同的模組中。模組包括 1 個根模組及 4 個子模組。</p>
+<p>toolz 把不同的命令組織成不同的模組中。模組包括 1 個根模組及 4 個子模組。</p>
 <p>在不同的模組下，Prompt (提示行) 的顯示亦會不同。</p>
 <table>
 <thead>
@@ -999,42 +974,36 @@
 <tbody>
 <tr>
 <td>根模組</td>
-<td><span style="color:yellow;font-family:monospace;background:#000;padding:2px;">tool&gt;</span></td>
-<td>進入<code class="codehilite"><span class="n">toolz</span></code>的第一個模組。</td>
+<td>tool&gt;</td>
+<td>進入toolz的第一個模組。</td>
 </tr>
 <tr>
 <td>languages 模組</td>
-<td><span style="color:yellow;font-family:monospace;background:#000;padding:2px;">tool languages&gt;</span></td>
+<td>tool languages&gt;</td>
 <td>與介面語言相關的操作。</td>
 </tr>
 <tr>
 <td>profiles 模組</td>
-<td><span style="color:yellow;font-family:monospace;background:#000;padding:2px;">tool profiles&gt;</span></td>
+<td>tool profiles&gt;</td>
 <td>與服務器配置相關的操作。</td>
 </tr>
 <tr>
 <td>workspace 模組</td>
-<td><span style="color:yellow;font-family:monospace;background:#000;padding:2px;">tool workspace&gt;</span></td>
+<td>tool workspace&gt;</td>
 <td>與配置檔相關的操作。</td>
 </tr>
 <tr>
 <td>usb 模組</td>
-<td><span style="color:yellow;font-family:monospace;background:#000;padding:2px;">tool usb&gt;</span></td>
+<td>tool usb&gt;</td>
 <td>與 usb 和 basebox 相關的操作。</td>
 </tr>
 </tbody>
 </table>
 <h2 id="_7">快速使用指南</h2>
-<ul>
-<li>
-<p><a href="../toolz-quick-wifi-setting/">設定 WiFi</a></p>
-<p>描述在已經安裝好程序的 Basebox 中，以 <code class="codehilite"><span class="n">toolz</span></code> 設定 WiFi 連線的步驟。</p>
-</li>
-<li>
-<p><a href="../toolz-update/">更新 <code class="codehilite"><span class="n">tool</span><span class="p">.</span><span class="n">exe</span></code></a></p>
-<p>描述 <code class="codehilite"><span class="n">toolz</span></code> 更新的步驟。</p>
-</li>
-</ul>
+<p><a href="../toolz-quick-wifi-setting/">設定 WiFi</a><br />
+描述在已經安裝好程序的 Basebox 中，以 toolz 設定 WiFi 連線的步驟。</p>
+<p><a href="../toolz-update/">更新 tool.exe</a><br />
+描述 toolz 更新的步驟。</p>
                 
                   
                 
@@ -1070,13 +1039,13 @@
           </a>
         
         
-          <a href="../toolz-config/" title="配置 Toolz" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../toolz-quick-wifi-setting/" title="設定 WiFi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一頁
                 </span>
-                配置 Toolz
+                設定 WiFi
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -65,6 +65,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-153698386-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -191,19 +216,6 @@
       
         <a href="../toolz/" class="md-tabs__link">
           Toolz
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../dummy.md" class="md-tabs__link">
-          Web UI
         </a>
       
     </li>
@@ -379,27 +391,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
-      配置 Toolz
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-3">
       快速使用指南
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-3">
         快速使用指南
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -453,13 +453,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
     
-    <label class="md-nav__link" for="nav-3-5">
+    <label class="md-nav__link" for="nav-3-4">
       Basebox 相關參考
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+      <label class="md-nav__title" for="nav-3-4">
         Basebox 相關參考
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -482,38 +482,14 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Web UI
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Web UI
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../dummy.md" title="Help" class="md-nav__link">
-      Help
+    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
+      配置 Toolz
     </a>
   </li>
 
@@ -530,13 +506,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -568,13 +544,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -638,60 +614,18 @@
     Document Site Build
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-deployment" class="md-nav__link">
-    Documentation Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style" class="md-nav__link">
-    Style
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#revision-date" class="md-nav__link">
-    Revision Date
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#litemotion-logo" class="md-nav__link">
-    Litemotion Logo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#image" class="md-nav__link">
-    Image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-be-done" class="md-nav__link">
-    To-Be-Done
+  <a href="#documentation-deployment" class="md-nav__link">
+    Documentation Deployment
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
   
 </li>
       
@@ -793,60 +727,18 @@
     Document Site Build
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-deployment" class="md-nav__link">
-    Documentation Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style" class="md-nav__link">
-    Style
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#revision-date" class="md-nav__link">
-    Revision Date
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#litemotion-logo" class="md-nav__link">
-    Litemotion Logo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#image" class="md-nav__link">
-    Image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-be-done" class="md-nav__link">
-    To-Be-Done
+  <a href="#documentation-deployment" class="md-nav__link">
+    Documentation Deployment
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
   
 </li>
       
@@ -869,10 +761,7 @@
                 
                 <h1 id="documentation">Documentation</h1>
 <p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">19</span></code></p>
-<div class="admonition info">
-<p class="admonition-title">This article is for document developer.</p>
-</div>
-<p>This page describes the documentation process and the style of this project.</p>
+<p>This page describes the documentation style of this project.</p>
 <h2 id="document-generator">Document Generator</h2>
 <p>We are migrating our tools for documentation to MkDocs + Material. For reference please visit the following links: </p>
 <ul>
@@ -880,7 +769,7 @@
 <li><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs-Material Website</a></li>
 </ul>
 <p>We are working documentation on Windows 10. Therefore the following code snippet are based on Windows platform. Also we have both Python 2.7 and 3.5 side by side, our <code class="codehilite"><span class="n">pip</span></code> commands will have the <code class="codehilite"><span class="n">python3</span></code> keyword as well.</p>
-<details class="example"><summary>Setup of Documentation Environment</summary><ul>
+<details class="note"><summary>Setup of Documentation Environment</summary><ul>
 <li>Install <mark>python3</mark> and <mark>pip</mark>. Just go to the official website to download the installer.</li>
 <li>Install <mark>mkdocs</mark> package. Run <code class="codehilite"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span></code></li>
 <li>Install <mark>mkdocs-material</mark> theme. Run <code class="codehilite"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">material</span></code></li>
@@ -891,8 +780,8 @@
 </details>
 <h2 id="document-project-folder">Document Project Folder</h2>
 <p>Documentation is also a project. Documentation Folder in other words is also the project folder for documentation.</p>
-<p>The project folder name is <code class="codehilite"><span class="n">iot</span><span class="o">-</span><span class="n">design</span></code> , and its layout is:</p>
-<div class="codehilite"><pre><span></span><span class="n">iot</span><span class="o">-</span><span class="n">design</span><span class="err">\</span>
+<p>The project folder name is <code class="codehilite"><span class="n">design</span></code> , under the <code class="codehilite"><span class="n">design</span></code> folder, the structure is:</p>
+<div class="codehilite"><pre><span></span><span class="n">design</span><span class="err">\</span>
   <span class="err">├</span> <span class="n">mkdocs</span><span class="p">.</span><span class="n">yml</span>
   <span class="err">├</span> <span class="n">docs</span><span class="err">\</span>
     <span class="err">├</span> <span class="n">img</span><span class="err">\</span>
@@ -904,59 +793,18 @@
 
 <h2 id="document-development">Document Development</h2>
 <p>MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it. Make sure you're in the same directory as the mkdocs.yml configuration file, and then start the server by running the mkdocs serve command:</p>
-<div class="codehilite"><pre><span></span><span class="cp">..iot-design&gt; python3 -m mkdocs serve</span>
+<div class="codehilite"><pre><span></span><span class="cp">..design&gt; python3 -m mkdocs serve</span>
 </pre></div>
 
 <h2 id="document-site-build">Document Site Build</h2>
 <p>Build the documentation site with mkdocs build. This will create a new directory, named site.</p>
-<div class="codehilite"><pre><span></span><span class="cp">..iot-design&gt; python3 -m mkdocs build</span>
+<div class="codehilite"><pre><span></span><span class="cp">..design&gt; python3 -m mkdocs build</span>
 </pre></div>
 
-<h2 id="documentation-deployment">Documentation Deployment</h2>
+<h3 id="documentation-deployment">Documentation Deployment</h3>
 <div class="admonition failure">
 <p class="admonition-title">TBD</p>
 </div>
-<h2 id="style">Style</h2>
-<p>The following is a set of rules for the writing markdown of this documentation.</p>
-<h3 id="revision-date">Revision Date</h3>
-<p>All production-ready document page must contain the <code class="codehilite"><span class="n">revision</span> <span class="nb">date</span></code> of the page. It must be at the next line of the page title. Using the following code to print the <code class="codehilite"><span class="n">revision</span> <span class="nb">date</span></code> in your markdown file.</p>
-<div class="codehilite"><pre><span></span><span class="sb">`{{ git_revision_date }}`</span>
-</pre></div>
-
-<h3 id="litemotion-logo">Litemotion Logo</h3>
-<p>When displaying Litemotion logo in the page, please using the 150x50 version with the following:</p>
-<div class="codehilite"><pre><span></span>![](./img/litemotion-logo-150x50.png)
-</pre></div>
-
-<details class="summary"><summary>Show Result</summary><p><img alt="" src="../img/litemotion-logo-150x50.png" /></p>
-</details>
-<h3 id="image">Image</h3>
-<p>All image materials are stored in <code class="codehilite"><span class="n">docs</span><span class="o">/</span><span class="n">img</span></code> folder. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>The image path reference is a bit different from markdown and HTML. </li>
-<li>HTML syntax provides more control of the layout and style of the image (e.g. width or height).</li>
-</ul>
-</div>
-<p>Markdown syntax</p>
-<div class="codehilite"><pre><span></span><span class="o">!</span><span class="p">[](.</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
-</pre></div>
-
-<p>HTML syntax
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../img/your-image-file&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;image alt text&quot;</span><span class="p">/&gt;</span>
-</pre></div></p>
-<h3 id="to-be-done">To-Be-Done</h3>
-<p>For denoting some parts of the document which are still not complete. We use TBD label.</p>
-<div class="codehilite"><pre><span></span>!!! failure &quot;TBD&quot;
-</pre></div>
-
-<details class="summary"><summary>Show Result</summary><div class="admonition failure">
-<p class="admonition-title">TBD</p>
-</div>
-</details>
-<h2 id="reference">Reference</h2>
-<p><a href="https://docs.microsoft.com/en-us/style-guide/welcome/">Microsoft Style Guide</a></p>
                 
                   
                 

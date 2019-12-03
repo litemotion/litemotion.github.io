@@ -65,6 +65,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-153698386-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -191,19 +216,6 @@
       
         <a href="../toolz/" class="md-tabs__link md-tabs__link--active">
           Toolz
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../dummy.md" class="md-tabs__link">
-          Web UI
         </a>
       
     </li>
@@ -373,6 +385,102 @@
     <a href="../toolz-get-started/" title="開始使用 Toolz" class="md-nav__link">
       開始使用 Toolz
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      快速使用指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        快速使用指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-quick-wifi-setting/" title="設定 WiFi" class="md-nav__link">
+      設定 WiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-quick-wifi-installer/" title="自定義的 WiFi 安裝包" class="md-nav__link">
+      自定義的 WiFi 安裝包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../toolz-update/" title="更新 tool.exe" class="md-nav__link">
+      更新 tool.exe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Basebox 相關參考
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Basebox 相關參考
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bb-auto-mode/" title="自動執行模式" class="md-nav__link">
+      自動執行模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -670,102 +778,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
-    
-    <label class="md-nav__link" for="nav-3-4">
-      快速使用指南
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        快速使用指南
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../toolz-quick-wifi-setting/" title="設定 WiFi" class="md-nav__link">
-      設定 WiFi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../toolz-quick-wifi-installer/" title="自定義的 WiFi 安裝包" class="md-nav__link">
-      自定義的 WiFi 安裝包
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../toolz-update/" title="更新 tool.exe" class="md-nav__link">
-      更新 tool.exe
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Basebox 相關參考
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Basebox 相關參考
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bb-auto-mode/" title="自動執行模式" class="md-nav__link">
-      自動執行模式
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -781,46 +793,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Web UI
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Web UI
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../dummy.md" title="Help" class="md-nav__link">
-      Help
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -850,13 +826,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1256,22 +1232,22 @@
 <td><code class="codehilite"><span class="n">toolz</span></code> 的 線上文檔 URL 路徑</td>
 </tr>
 <tr>
-<td><a href="#repository"><code class="codehilite"><span class="n">repository</span></code></a></td>
+<td><code class="codehilite"><span class="n">repository</span></code></td>
 <td><code class="codehilite"><span class="k">Object</span></code></td>
 <td><code class="codehilite"><span class="n">toolz</span></code> 的系統更新配置</td>
 </tr>
 <tr>
-<td><a href="#workspace"><code class="codehilite"><span class="n">workspace</span></code></a></td>
+<td><code class="codehilite"><span class="n">workspace</span></code></td>
 <td><code class="codehilite"><span class="k">Object</span></code></td>
 <td><code class="codehilite"><span class="n">toolz</span></code> 的 workspace (工作空間，即本機相關的) 配置</td>
 </tr>
 <tr>
-<td><a href="#profiles"><code class="codehilite"><span class="n">profiles</span></code></a></td>
+<td><code class="codehilite"><span class="n">profiles</span></code></td>
 <td><code class="codehilite"><span class="nb">Array</span> <span class="k">of</span> <span class="k">Object</span></code></td>
 <td><code class="codehilite"><span class="n">toolz</span></code> 要連線的服務器 profile 配置</td>
 </tr>
 <tr>
-<td><a href="#commands"><code class="codehilite"><span class="n">commands</span></code></a></td>
+<td><code class="codehilite"><span class="n">command</span></code></td>
 <td><code class="codehilite"><span class="k">Object</span></code></td>
 <td><code class="codehilite"><span class="n">toolz</span></code> 的預設指令 (Preset Command) 配置</td>
 </tr>
@@ -1535,7 +1511,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../toolz-get-started/" title="開始使用 Toolz" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../bb-auto-mode/" title="自動執行模式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1544,19 +1520,19 @@
                 <span class="md-footer-nav__direction">
                   上一頁
                 </span>
-                開始使用 Toolz
+                自動執行模式
               </span>
             </div>
           </a>
         
         
-          <a href="../toolz-quick-wifi-setting/" title="設定 WiFi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../api-overview/" title="API Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一頁
                 </span>
-                設定 WiFi
+                API Overview
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

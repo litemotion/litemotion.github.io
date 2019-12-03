@@ -65,6 +65,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-153698386-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -191,19 +216,6 @@
       
         <a href="../toolz/" class="md-tabs__link md-tabs__link--active">
           Toolz
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../dummy.md" class="md-tabs__link">
-          Web UI
         </a>
       
     </li>
@@ -380,30 +392,18 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
-      配置 Toolz
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-3">
       快速使用指南
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-3">
         快速使用指南
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -516,13 +516,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
     
-    <label class="md-nav__link" for="nav-3-5">
+    <label class="md-nav__link" for="nav-3-4">
       Basebox 相關參考
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+      <label class="md-nav__title" for="nav-3-4">
         Basebox 相關參考
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -545,38 +545,14 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Web UI
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Web UI
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../dummy.md" title="Help" class="md-nav__link">
-      Help
+    <a href="../toolz-config/" title="配置 Toolz" class="md-nav__link">
+      配置 Toolz
     </a>
   </li>
 
@@ -593,13 +569,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -629,13 +605,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Other Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Other Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -760,13 +736,13 @@
                 
                 
                 <h1 id="wifi">設定 WiFi</h1>
-<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">29</span></code></p>
+<p><code class="codehilite"><span class="mi">2019</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span></code></p>
 <h2 id="_1">需要的物件</h2>
 <ol>
-<li>已經安裝好程序的 Basebox </li>
+<li>已經安裝好程序的 Basebox</li>
 <li>micro USB 數據線</li>
-<li><code class="codehilite"><span class="n">toolz</span></code> 程式</li>
-<li>想要 Basebox 連接上的 WiFi 連線的<strong>安裝包</strong></li>
+<li>toolz 程式</li>
+<li>想要 Basebox 連接上的 WiFi 連線的安裝包</li>
 </ol>
 <h2 id="_2">預備動作</h2>
 <p>不論你要對多少個 Basebox 執行，預備動作只需在「執行動作」之前做一次。</p>
@@ -775,11 +751,11 @@
 <p>用 micro USB 數據線 連接 Basebox 及你的電腦端口</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>以下假設: 你的電腦連接端口是 <code class="codehilite"><span class="n">COM3</span></code>。而你的預設端口亦是 <code class="codehilite"><span class="n">COM3</span></code>。</p>
+<p>以下假設: 你的電腦連接端口是 COM3。而你的預設端口亦是 COM3。</p>
 </div>
 </li>
 <li>
-<p>在 <code class="codehilite"><span class="n">toolz</span></code> 轉到 usb 模組</p>
+<p>在 toolz 轉到 usb 模組</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果你目前不在 usb 模組，請鍵入命令 <code class="codehilite"><span class="n">cd</span> <span class="n">usb</span></code>。如果你已在 usb 模組，則略過此步。</p>
@@ -790,10 +766,10 @@
 <p>對每個要處理的 Basebox ，執行動作都需做一次。</p>
 <ol>
 <li>
-<p>在 <code class="codehilite"><span class="n">toolz</span></code> 確定 Basebox 已在 <em>非自動執行模式</em> (stop-auto mode)</p>
+<p>在 toolz 確定 Basebox 已在 非自動執行模式 (stop-auto mode)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果 Basebox 已在 <em>非自動執行模式</em> ，則略過此步。</p>
+<p>如果 Basebox 已在 非自動執行模式 ，則略過此步。</p>
 </div>
 <p>執行預設指令 <code class="codehilite"><span class="n">stop</span><span class="o">-</span><span class="n">auto</span></code></p>
 <div class="codehilite"><pre><span></span><span class="n">tool</span> <span class="n">usb</span><span class="o">&gt;</span> <span class="n">cmd</span> <span class="n">stop</span><span class="o">-</span><span class="n">auto</span>
@@ -801,29 +777,32 @@
 
 </li>
 <li>
-<p>在 <code class="codehilite"><span class="n">toolz</span></code> 執行安裝 WiFi 相關安裝包</p>
+<p>在 toolz 執行安裝 WiFi 相關安裝包</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>以下假設: 你的 WiFi 相關安裝包名稱是 <code class="codehilite"><span class="n">base3</span><span class="o">-</span><span class="n">wifi</span><span class="o">-</span><span class="n">d1f</span></code>。安裝包內容是設定 Basebox WiFi SSID 為 <code class="codehilite"><span class="n">d1f</span></code>。</p>
 </div>
-<p>執行命令
+<p>執行命令</p>
 <div class="codehilite"><pre><span></span><span class="n">tool</span> <span class="n">usb</span><span class="o">&gt;</span> <span class="n">install</span> <span class="n">base3</span><span class="o">-</span><span class="n">wifi</span><span class="o">-</span><span class="n">d1f</span>
-</pre></div></p>
-<p>如果 <code class="codehilite"><span class="n">toolz</span></code> 找到該安裝包 (<code class="codehilite"><span class="n">base3</span><span class="o">-</span><span class="n">wifi</span><span class="o">-</span><span class="n">d1</span></code>)，會把安裝包內的描述及安裝腳本的步驟顯示出來，並且詢問你是否確定安裝。確定請輸入 y，取消請輸入 n。</p>
+</pre></div>
+
+<p>如果 toolz 找到該安裝包 (<code class="codehilite"><span class="n">base3</span><span class="o">-</span><span class="n">wifi</span><span class="o">-</span><span class="n">d1</span></code>)，會把安裝包內的描述及安裝腳本的步驟顯示出來，並且詢問你是否確定安裝。確定請輸入 y，取消請輸入 n。</p>
 </li>
 <li>
-<p>在 <code class="codehilite"><span class="n">toolz</span></code> 設定 Basebox 為 <em>自動執行模式</em> (auto mode)</p>
+<p>在 toolz 設定 Basebox 為 自動執行模式 (auto mode)</p>
 <p>執行預設指令 <code class="codehilite"><span class="n">auto</span></code></p>
 <div class="codehilite"><pre><span></span><span class="n">tool</span> <span class="n">usb</span><span class="o">&gt;</span> <span class="n">cmd</span> <span class="n">auto</span>
 </pre></div>
 
 </li>
 </ol>
-<details class="info"><summary>動畫: <code class="codehilite"><span class="n">toolz</span></code> 設定 WiFi</summary><p><img alt="" src="../img/wifi-setting-command.gif" /></p>
+<details class="info"><summary>動畫: toolz 設定 WiFi</summary><p><img alt="" src="../img/wifi-setting-command.gif" /></p>
 </details>
 <h2 id="_4">相關章節</h2>
-<p><a href="../bb-auto-mode/">Basebox 自動執行模式</a></p>
-<p><a href="../toolz-quick-wifi-installer/">製作自定義的 WiFi 安裝包</a></p>
+<p><a href="../bb-auto-mode/">Basebox 自動執行模式</a><br />
+簡介 Basebox 程式中的自動執行模式</p>
+<p><a href="../toolz-quick-wifi-installer/">製作自定義的 WiFi 安裝包</a><br />
+簡介如何製作自定義的 WiFi 安裝包，以及 Basebox 的預設 WiFi 設定</p>
                 
                   
                 
@@ -844,7 +823,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../toolz-config/" title="配置 Toolz" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../toolz-get-started/" title="開始使用 Toolz" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -853,7 +832,7 @@
                 <span class="md-footer-nav__direction">
                   上一頁
                 </span>
-                配置 Toolz
+                開始使用 Toolz
               </span>
             </div>
           </a>
